@@ -1,6 +1,29 @@
 \section{Evaluation}
-\label{sec:Auswertung}
+\label{sec:evaluation}
 
+
+\subsection{Measurement of heat capacity $C_p$}
+To determine the heat capacity at constant pressure $C_p$, the resistance $R$, voltage $U$, current $I$ and time $t$ are measured.
+Uncertainties are estimated for the quantities:
+\begin{align*}
+    \sigma_R &= \qty{0.1}{\ohm} \\
+    \sigma_U &= \qty{0.01}{\volt}\\
+    \sigma_I &= \qty{0.1}{\milli\ampere} \\
+    \sigma_t &= \qty{5}{\second}
+\end{align*}
+The reason for this is that the measuring instruments have a limited resolution.
+In the following calculations, the error propagation is calculated using the Python library \textbf{Uncertainties} \cite{uncertainties}.
+\\
+The supplied energy in the time period $\Delta t$
+\begin{equation}
+    \Delta E = U \cdot I \cdot \Delta t \, .
+\end{equation}
+can be used to determine the molar heat capacity
+\begin{equation}
+    C_p = \frac{\Delta E}{\Delta T} \frac{M}{m} \,.
+\end{equation}
+The mass of the copper sample $m = \qty{342}{\gram}$ \cite{V47} and the molar mass of copper $M = \qty{63.5}{\frac{\gram}{\mol}}$ \cite{goodfellow} are used for this.
+All measured values and the determined heat capacities are listed in \autoref{tab:C_p}.
 %Siehe \autoref{fig:plot}!
 \begin{table}
     \centering
@@ -36,7 +59,9 @@
         \bottomrule
     \end{tabular}
 \end{table}
+\FloatBarrier
 
+\subsection{Determination of the heat capacity $C_v$}
 \begin{table}
     \centering
     \caption{The thermal expansion $\alpha$ resulting from the fit for the temperature $T$, the measured heat capacity at constant pressure $C_p$ and the determined heat capacity at constant volume.}
