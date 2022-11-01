@@ -35,8 +35,43 @@ Where $\alpha$ is the coefficient of thermal expansion, $\kappa$ is the bulk mod
 \subsection{Classical model}
 \label{ssec:theory2}
 
+In the classical model we assume that there is a system with $3 N$ vibration modes.
+With $N$ being the number of all atoms in the body.
+The energy is equally split up in cinetic and potenial energy for each mode.
+After that we get the internal energy from which we derive the Dulong–Petit law
+\begin{equation}
+    C_\text{V} = 3 N k_\text{B}.
+    \label{eq:dulong}
+\end{equation}
+
+This model provides accurate results in high temperature experiments but fails to predict the low temperature area of $C_\text{V}$.
+With the addition of quantum mechanics it is possible to get a more precise depiction of heat capacity.
+
+
 \subsection{Einstein model}
 \label{ssec:theory3}
 
+The Einstein model is based on the assumption that all the eigenmodes have the same frequency $\omega_\text{E}$.
+With that the densitiy of states can be defined as $D (\omega) = 3 N \delta (\omega - \omega_\text{E})$.
+In addition the so called Einstein temperature 
+\begin{equation}
+    \theta_\text{E} = \frac{\hbar \omega_\text{E}}{k_\text{B}}
+    \label{eq:einstein}
+\end{equation}
+is used to determine in which ranges of temperature the model works well.
+Because the assumption can only be made, if the optical modes are dominant.
+So the heat capacity is given for different temperatures ranges as
+\begin{equation}
+    C_\text{V}^\text{E} =
+      \begin{cases}
+        3 N k_\text{B} \left( \frac{\Theta_\text{E}}{T}   \right)^2 \exp{- \frac{\Theta_\text{E}}{T}} \text{für} T $<<$ \Theta_\text{E}\\
+        3 N k_\text{B} \text{für} T $>>$ \Theta_\text{E}.\\
+        \end{cases}       
+\end{equation}
+For high temperatures the Einstein model is the Dulong–Petit law.
+Despite a more fitting result for low temperatures the observed $T^3$ dependency is not reached.
+
 \subsection{Debye model}
 \label{ssec:theory4}
+
+The core assumption in the Debye model is that all phonons can be described via three modes with linear dispersion $\omega_\text{i} = \nu_\text{i} q$
