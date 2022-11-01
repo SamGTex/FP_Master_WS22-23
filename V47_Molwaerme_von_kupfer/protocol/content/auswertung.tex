@@ -23,7 +23,8 @@ can be used to determine the molar heat capacity
 \end{equation}
 The mass of the copper sample $m = \qty{342}{\gram}$ \cite{V47} and the molar mass of copper $M = \qty{63.5}{\frac{\gram}{\mol}}$ \cite{goodfellow} are used for this.
 All measured values and the determined heat capacities are listed in \autoref{tab:C_p}.
-%Siehe \autoref{fig:plot}!
+The temperature dependency of the heat capacity $C_p$ is shown in \autoref{fig:C_p}.
+Also marked is the theoretical value of the Debye model. %!REF
 \begin{table}
     \centering
     \caption{The temperature difference $\Delta T$ of the sample in the time period $t$ with the current $I$ applied at voltage $U$. The resulting heat capacity at constant pressure is denoted as $C_p$.}
@@ -67,7 +68,7 @@ All measured values and the determined heat capacities are listed in \autoref{ta
 \end{figure}
 \FloatBarrier
 
-\subsection{Determination of the heat capacity $C_V$}
+\subsection{Heat capacity at constant volume $C_V$}
 The relation between the measured heat capacity at constant pressure $C_p$ and the heat capacity at constant volume $C_V$ is given by  %!REF
 \begin{equation}
         C_p - C_V = 9 \cdot \alpha^2 \cdot \kappa \cdot V_0 \cdot T \, ,
@@ -75,11 +76,11 @@ The relation between the measured heat capacity at constant pressure $C_p$ and t
 \end{equation}
 where $\alpha$ is the thermal expansion, $\kappa$ the bulk modulus and $V_0 = \frac{M}{\rho}$ the molar volume with the density of cupper $\rho$.
 The values of this parameters $\kappa = \qty{137.8}{\giga\pascal}$ and $\rho = \qty{8960}{\frac{\kilogram}{\metre^3}}$ are taken from source \cite{goodfellow}.
-The thermal expansion depends on the temperature and follows the function
+The thermal expansion depends on the temperature and shows a $\frac{1}{T}$ behavior
 \begin{equation}
     \alpha = a_1 \cdot \frac{1}{T} + a_2 \, .
 \end{equation}
-A fit with the non-linear least squares method is performed with the python library Scipy\cite{scipy} on the given values ($T, \alpha$) \cite{V47}.
+A fit with the non-linear least squares method is performed with the python library Scipy\cite{scipy} on the given value pairs ($T, \alpha$) \cite{V47}.
 The fitted function with the parameters
 \begin{align*}
     a_1 &= \qty{-8.73(4)e-04}{} \\
@@ -88,19 +89,20 @@ The fitted function with the parameters
 is shown in \autoref{fig:alpha}.
 \begin{figure}
     \centering
+    \includegraphics[width=0.8\textwidth]{content/plots/temperature_progress.pdf}
+    \caption{The fitted temperature dependence of $\alpha$ and the given values.}
+    \label{fig:alpha}
+\end{figure}
+The function returns the thermal expansion $\alpha$ at the measured temperature $T$.
+The heat capacity $C_V$ is now calculated with \autoref{eqn:C_relation} and can be viewed in \autoref{fig:C_v}.
+The numerical values of $\alpha$ and $C_V$ are listed in \autoref{tab:C_v}.
+\begin{figure}
+    \centering
     \includegraphics[width=0.8\textwidth]{content/plots/C_v.pdf}
     \caption{The resulting temperature dependency of the heat capacity at constant volume $C_v$.
     The red line represents the theoretical value for the classical Debye model $C = 3 \cdot R = \qty{24.9}{\frac{\joule}{\mol \cdot \kelvin}}$, where $R$ is the general gas constant.
     }
-    \label{fig:alpha}
-\end{figure}
-The heat capacity $C_V$ is now calculated with \autoref{eqn:C_relation} and can be viewed in \autoref{fig:C_v}.
-The nummerical values of $\alpha$ and $C_V$ are listed in \autoref{tab:C_v}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{content/plots/temperature_progress.pdf}
-    \caption{The fitted temperature dependence of $\alpha$ and the given values.}
-    \label{fig:alpha}
+    \label{fig:C_v}
 \end{figure}
 \begin{table}
     \centering
@@ -136,7 +138,13 @@ The nummerical values of $\alpha$ and $C_V$ are listed in \autoref{tab:C_v}
         \bottomrule
     \end{tabular}
 \end{table}
+\FloatBarrier
 
+\subsection{Debye's temperature \texorpdfstring{$\theta$}{theta}}
+For the determination of the material depending parameter \textbf{Debye's temperature $\theta$}, only temperatures below $\qty{170}{\kelvin}$ are considered.
+The fraction $\frac{\theta}{T}$ is taken from source \cite{V47} for each measured temperature $T$.
+A simple multiplication with the temperature results in Debye's temperature.
+\autoref{tab:debye} contains the determined Debye's temperature $\theta$ for each temperature $T$ with the condition $T < \qty{170}{\kelvin}$. 
 \begin{table}
     \centering
     \caption{The Debye's temperature $\theta$ resulting from the heat capacity at constant volume $C_v$ and the temperature $T$.}
