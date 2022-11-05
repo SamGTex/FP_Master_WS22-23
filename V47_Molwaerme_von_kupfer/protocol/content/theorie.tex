@@ -20,7 +20,7 @@ Futhermore there are two different definitions of $C$.
 One where the volume of the body is consant $(\mathrm{d} V = 0)$ and one where the pressure is constant $(\mathrm{d} p = 0)$.
 They are defined as 
 \begin{align}
-    C_\text{V} &= \left. \frac{\Delta U}{\Delta T} \right\vert_{V}\\
+    C_\text{V} &= \left. \frac{\Delta U}{\Delta T} \right\vert_{V}\\ 
     C_\text{p} &= \left. \frac{\Delta Q}{\Delta T} \right\vert_{p}.
 \end{align}
 When measuring the heat capacity during constant pressure, a part of the heat energy is used to increase the volume of the body.
@@ -30,7 +30,7 @@ The difference between both heat capacities is given as
     C_\text{p} - C_\text{V} = 9 \alpha ^2 \kappa V_\text{0} T.
     \label{eq:heat_dif}
 \end{equation}
-Where $\alpha$ is the coefficient of thermal expansion, $\kappa$ is the bulk modulus and $V_\text{0}$ the volume of one mol.
+Where $\alpha$ is the coefficient of thermal expansion, $\kappa$ is the bulk modulus and $V_\text{0}$ the molar volume.
 
 \subsection{Classical model}
 \label{ssec:theory2}
@@ -46,7 +46,6 @@ After that we get the internal energy from which we derive the Dulong–Petit la
 
 This model provides accurate results in high temperature experiments but fails to predict the low temperature area of $C_\text{V}$.
 With the addition of quantum mechanics it is possible to get a more precise depiction of heat capacity.
-
 
 \subsection{Einstein model}
 \label{ssec:theory3}
@@ -64,8 +63,8 @@ So the heat capacity is given for different temperatures ranges as
 \begin{equation}
     C_\text{V}^\text{E} =
       \begin{cases}
-        3 N k_\text{B} \left( \frac{\Theta_\text{E}}{T}   \right)^2 \exp{- \frac{\Theta_\text{E}}{T}} \text{für} T $<<$ \Theta_\text{E}\\
-        3 N k_\text{B} \text{für} T $>>$ \Theta_\text{E}.\\
+        3 N k_\text{B} \left( \frac{\Theta_\text{E}}{T}   \right)^2 \exp(- \frac{\Theta_\text{E}}{T}) \,\, \text{für} \,\,  T \ll \Theta_\text{E}\\
+        3 N k_\text{B} \,\, \text{für} \,\, T \gg \Theta_\text{E}.\\
         \end{cases}       
 \end{equation}
 For high temperatures the Einstein model is the Dulong–Petit law.
@@ -74,4 +73,38 @@ Despite a more fitting result for low temperatures the observed $T^3$ dependency
 \subsection{Debye model}
 \label{ssec:theory4}
 
-The core assumption in the Debye model is that all phonons can be described via three modes with linear dispersion $\omega_\text{i} = \nu_\text{i} q$
+The core assumption in the Debye model is that all phonons can be described via three modes with linear dispersion $\omega_\text{i} = \nu_\text{i} q$.
+This works specifically well for low temperature ranges in which the acoustic phonons are dominant.
+Based on the condition that the integral over all wave vectors needs to give $3N$, we can define the Debye wave vector $q_\text{D}$.
+That allows to calculate the Debye frequency
+\begin{equation}
+    \omega_\text{D,i} = \nu_\text{i} \left(6 \pi^2 \frac{N}{V} \right)^{\frac{1}{3}} = \left(18 \pi^2 \frac{N}{V} \right)^{\frac{1}{3}} \cdot \frac{\nu_\text{long} \nu_\text{trans}}{\left( \nu_\text{long}^3 +  2 \nu_\text{trans}^3  \right)^{\frac{1}{3}}}.
+    \label{eq:debye_freq}
+\end{equation}
+Where $\nu_\text{i}$ is the speed of sound in the medium which can be split up in the transversal and longitudinal speed of sound.
+The volume of a state $V$ and the number of atoms $N$ can be described as
+
+\begin{align}
+    V &= \frac{m}{M} \cdot V_0\\ 
+    N &= \frac{m}{M} \cdot N_\text{A}.
+\end{align}
+
+Like above $V_0$ is the molar Volume, $m$ is the mass of the body and $M$ the molar mass the body is made of.
+
+The Debye frequency is also the biggest frequency that can be reached in the model.
+Similar to the Einstein model there is a temperature value for every material which serves as a parameter for calculating the heat capacity.
+For this model it is the Debye temperature
+\begin{equation}
+    \theta_\text{D} = \frac{\hbar \nu_\text{i}}{k_\text{B}} \left(6 \pi^2 \frac{N}{V} \right)^{\frac{1}{3}} = \frac{\hbar \omega_\text{D,i}}{k_\text{B}}.
+    \label{eq:debye_temp}
+\end{equation}
+Furthermore the Debye temperature serves as a way to indicate when quantummechanical effects starts to get dominant. 
+With that we can define the heat capacity
+\begin{equation}
+    C_\text{V}^\text{D} =
+      \begin{cases}
+        \frac{12 \pi ^4}{5} N k_\text{B} \left( \frac{T}{\Theta_\text{D}}   \right)^3 \,\, \text{für} \,\,  T \ll \Theta_\text{D}\\
+        3 N k_\text{B} \,\, \text{für} \,\, T \gg \Theta_\text{D}.\\
+        \end{cases}       
+\end{equation}
+Here we get the $T^3$ result that was observed in experiments.
