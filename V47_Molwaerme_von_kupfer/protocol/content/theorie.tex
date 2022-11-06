@@ -65,7 +65,7 @@ So the heat capacity is given for different temperatures ranges as
       \begin{cases}
         3 N k_\text{B} \left( \frac{\Theta_\text{E}}{T}   \right)^2 \exp(- \frac{\Theta_\text{E}}{T}) \,\, \text{für} \,\,  T \ll \Theta_\text{E}\\
         3 N k_\text{B} \,\, \text{für} \,\, T \gg \Theta_\text{E}.\\
-        \end{cases}       
+        \end{cases}
 \end{equation}
 For high temperatures the Einstein model is the Dulong–Petit law.
 Despite a more fitting result for low temperatures the observed $T^3$ dependency is not reached.
@@ -78,7 +78,7 @@ This works specifically well for low temperature ranges in which the acoustic ph
 Based on the condition that the integral over all wave vectors needs to give $3N$, we can define the Debye wave vector $q_\text{D}$.
 That allows to calculate the Debye frequency
 \begin{equation}
-    \omega_\text{D,i} = \nu_\text{i} \left(6 \pi^2 \frac{N}{V} \right)^{\frac{1}{3}} = \left(18 \pi^2 \frac{N}{V} \right)^{\frac{1}{3}} \cdot \frac{\nu_\text{long} \nu_\text{trans}}{\left( \nu_\text{long}^3 +  2 \nu_\text{trans}^3  \right)^{\frac{1}{3}}}.
+    \omega_\text{D,i} = \nu_\text{i} \left(6 \pi^2 \frac{N}{V} \right)^{\frac{1}{3}} = \left(18 \pi^2 \frac{N}{V} \right)^{\frac{1}{3}} \cdot \frac{\nu_\text{long} \nu_\text{trans}}{\left( \nu_\text{trans}^3 +  2 \nu_\text{long}^3  \right)^{\frac{1}{3}}}.
     \label{eq:debye_freq}
 \end{equation}
 Where $\nu_\text{i}$ is the speed of sound in the medium which can be split up in the transversal and longitudinal speed of sound.
@@ -105,6 +105,7 @@ With that we can define the heat capacity
       \begin{cases}
         \frac{12 \pi ^4}{5} N k_\text{B} \left( \frac{T}{\Theta_\text{D}}   \right)^3 \,\, \text{für} \,\,  T \ll \Theta_\text{D}\\
         3 N k_\text{B} \,\, \text{für} \,\, T \gg \Theta_\text{D}.\\
-        \end{cases}       
+        \end{cases}
+        \label{eq:debyec}
 \end{equation}
 Here we get the $T^3$ result that was observed in experiments.
