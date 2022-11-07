@@ -9,7 +9,7 @@ The amount of heat $\Delta Q$ needed to rise the temperature $T$ by $\SI{1}{\kel
     C = \frac{\Delta Q}{\Delta T}.
     \label{eq:heat}
 \end{equation}
-It is highly dependend on the amount of substance the heat is being transferred to.
+It is dependend on the amount of substance the heat is being transferred to.
 To get a value that is independent of the amount of substance we define
 \begin{equation}
     c^{\text{m}} = \frac{\Delta Q}{\Delta T \cdot \si{\mol}}.
@@ -19,32 +19,26 @@ Furthermore there are two different definitions of $C$.
 One where the volume of the body is consant $(\mathrm{d} V = 0)$ and one where the pressure is constant $(\mathrm{d} p = 0)$.
 They are defined as 
 \begin{align}
-    C_\text{V} &= \left. \frac{\Delta U}{\Delta T} \right\vert_{V}\\ 
-    C_\text{p} &= \left. \frac{\Delta Q}{\Delta T} \right\vert_{p}.
+    C_V &= \left. \frac{\Delta U}{\Delta T} \right\vert_{V}\\ 
+    C_p &= \left. \frac{\Delta Q}{\Delta T} \right\vert_{p}.
 \end{align}
-When measuring the heat capacity during constant pressure, a part of the heat energy is used to increase the volume of the body.
-Because of that $C_\text{p}$ is always greater than $C_\text{V}$.
-The difference between both heat capacities is given as
-\begin{equation}
-    C_\text{p} - C_\text{V} = 9 \alpha ^2 \kappa V_\text{0} T.
-    \label{eq:heat_dif}
-\end{equation}
-Where $\alpha$ is the coefficient of thermal expansion, $\kappa$ is the bulk modulus and $V_\text{0}$ the molar volume.
+When measuring the heat capacity at constant pressure, a part of the heat energy is used to increase the volume of the body.
+Because of that $C_p$ is always greater than $C_V$.
 
 \subsection{Classical model}
 \label{ssec:theory2}
 
 In the classical model we assume that there is a system with $3 N$ vibration modes.
 With $N$ being the number of all atoms in the body.
-The energy is equally split up in cinetic and potenial energy for each mode.
+The energy is equally split up in kinetic and potential energy for each mode.
 After that we get the internal energy from which we derive the Dulong–Petit law
 \begin{equation}
-    C_\text{V} = 3 N k_\text{B}.
+    C_V = 3 N k_\text{B}.
     \label{eq:dulong}
 \end{equation}
 
-This model provides accurate results in high temperature experiments but fails to predict the low temperature area of $C_\text{V}$.
-With the addition of quantum mechanics it is possible to get a more precise depiction of heat capacity.
+This model provides accurate results in high temperature experiments but fails to predict the low temperature area of $C_V$.
+With the addition of quantum mechanics it is possible to get a more precise model of heat capacity.
 
 \subsection{Einstein model}
 \label{ssec:theory3}
@@ -60,13 +54,13 @@ is used to determine in which ranges of temperature the model works well.
 Because the assumption can only be made, if the optical modes are dominant.
 So the heat capacity is given for different temperatures ranges as
 \begin{equation}
-    C_\text{V}^\text{E} =
+    C_V^\text{E} =
       \begin{cases}
         3 N k_\text{B} \left( \frac{\Theta_\text{E}}{T}   \right)^2 \exp(- \frac{\Theta_\text{E}}{T}) \,\, \text{für} \,\,  T \ll \Theta_\text{E}\\
         3 N k_\text{B} \,\, \text{für} \,\, T \gg \Theta_\text{E}.\\
         \end{cases}
 \end{equation}
-For high temperatures the Einstein model is the Dulong–Petit law.
+For high temperatures the Einstein model converges to the Dulong–Petit law.
 Despite a more fitting result for low temperatures the observed $T^3$ dependency is not reached.
 
 \subsection{Debye model}
@@ -81,27 +75,27 @@ That allows to calculate the Debye's frequency
     \label{eq:debye_freq}
 \end{equation}
 Where $\nu_\text{i}$ is the speed of sound in the medium which can be split up in the transversal and longitudinal speed of sound.
-The volume of one state $V$ and the number of atoms $N$ can be described as
+The volume $V$ and the number of atoms $N$ can be described as
 \begin{align}
     V &= \frac{m}{M} \cdot V_0\\ 
     N &= \frac{m}{M} \cdot N_\text{A}.
 \end{align}
-Like above $V_0$ is the molar Volume, $m$ is the mass of the body and $M$ the molar mass the body is made of.
+$V_0$ is the molar Volume, $m$ is the mass of the body and $M$ the molar mass the body is made of.
 The Debye's frequency is also the biggest frequency that can be reached in the model.
-Similar to the Einstein model there is a temperature value for every material which serves as a parameter for calculating the heat capacity.
+Similar to the Einstein model there is a threshold for every material which serves as a parameter for calculating the heat capacity.
 For this model it is called the Debye's temperature
 \begin{equation}
     \theta_\text{D} = \frac{\hbar \nu_\text{i}}{k_\text{B}} \left(6 \pi^2 \frac{N}{V} \right)^{\frac{1}{3}} = \frac{\hbar \omega_\text{D,i}}{k_\text{B}}.
     \label{eq:debye_temp}
 \end{equation}
-Furthermore the Debye's temperature serves as a way to indicate when quantummechanical effects starts to get dominant. 
+Furthermore the Debye's temperature serves as a way to indicate when quantummechanical effects starts to dominate. 
 With that we can define the heat capacity
 \begin{equation}
-    C_\text{V}^\text{D} =
+    C_V^\text{D} =
       \begin{cases}
         \frac{12 \pi ^4}{5} N k_\text{B} \left( \frac{T}{\Theta_\text{D}}   \right)^3 \,\, \text{für} \,\,  T \ll \Theta_\text{D}\\
         3 N k_\text{B} \,\, \text{für} \,\, T \gg \Theta_\text{D}.\\
         \end{cases}
         \label{eq:debyec}
 \end{equation}
-Here we get the $T^3$ result that was observed in experiments.
+Here we get the $T^3$ behaviour that was observed in low temperature experiments.

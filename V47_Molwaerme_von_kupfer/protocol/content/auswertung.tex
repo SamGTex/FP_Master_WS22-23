@@ -15,25 +15,25 @@ In the following calculations, the error propagation is calculated using the Pyt
 \\
 The supplied energy in the time period $\Delta t$
 \begin{equation}
-    \Delta E = U \cdot I \cdot \Delta t \, .
+    \Delta E = U \cdot I \cdot \Delta t
 \end{equation}
 can be used to determine the molar heat capacity
 \begin{equation}
     C_p = \frac{\Delta E}{\Delta T} \frac{M}{m} \,.
 \end{equation}
-The mass of the copper sample $m = \qty{342}{\gram}$ \cite{V47} and the molar mass of copper $M = \qty{63.5}{\frac{\gram}{\mol}}$ \cite{goodfellow} are used for this.
+The mass of the copper sample $m = \qty{342}{\gram}$ \cite{V47} and the molar mass of copper $M = \qty{63.5}{\frac{\gram}{\mol}}$ \cite{goodfellow} are used for the calculation.
 All measured values and the determined heat capacities are listed in \autoref{tab:C_p}.
 The temperature dependency of the heat capacity $C_p$ is shown in \autoref{fig:C_p}.
 Also marked is the theoretical value of the Dulong–Petit law according to \autoref{eq:dulong}.
 \begin{table}
     \centering
-    \caption{The temperature difference $\Delta T$ of the sample in the time period $t$ with the current $I$ applied at voltage $U$. The resulting heat capacity at constant pressure is denoted as $C_p$.}
+    \caption{The temperature difference $\Delta T$ of the sample in the time period $\Delta t$ with the current $I$ applied at voltage $U$. The resulting heat capacity at constant pressure is denoted as $C_p$.}
     \label{tab:C_p}
-    \begin{tabular}{c c c c c}
+    \begin{tabular}{r r r r r}
         \toprule
         $\Delta T \,/\, \unit{\kelvin}$ & $U \,/\, \unit{\volt}$ & $I \,/\, \unit{\milli\ampere}$ & $\Delta t \,/\, \unit{\second}$ & $C_p \,/\, \unit{\frac{\joule}{\mol \cdot \kelvin}}$ \\
         \midrule
-        $2.13\pm0.33$ & $16.150\pm0.010$ & $153.20\pm0.10$ & $105\pm7$ & $24\pm4$ \\
+        $2.13\pm0.33$ & $16.150\pm0.010$ & $153.20\pm0.10$ & $105\pm7$ & $24.0\pm4.0$ \\
         $9.26\pm0.34$ & $16.310\pm0.010$ & $154.70\pm0.10$ & $349\pm7$ & $18.6\pm0.8$ \\
         $10.02\pm0.34$ & $16.310\pm0.010$ & $154.70\pm0.10$ & $391\pm7$ & $19.3\pm0.7$ \\
         $9.83\pm0.34$ & $16.790\pm0.010$ & $159.00\pm0.10$ & $323\pm7$ & $17.2\pm0.7$ \\
@@ -47,15 +47,15 @@ Also marked is the theoretical value of the Dulong–Petit law according to \aut
         $9.94\pm0.35$ & $17.360\pm0.010$ & $164.20\pm0.10$ & $437\pm7$ & $24.6\pm1.0$ \\
         $9.98\pm0.35$ & $17.380\pm0.010$ & $164.30\pm0.10$ & $438\pm7$ & $24.6\pm1.0$ \\
         $10.02\pm0.35$ & $17.380\pm0.010$ & $164.40\pm0.10$ & $450\pm7$ & $25.1\pm1.0$ \\
-        $9.80\pm0.4$ & $17.390\pm0.010$ & $164.50\pm0.10$ & $457\pm7$ & $26.1\pm1.0$ \\
-        $10.1\pm0.4$ & $17.390\pm0.010$ & $164.60\pm0.10$ & $463\pm7$ & $25.7\pm1.0$ \\
-        $9.9\pm0.4$ & $17.400\pm0.010$ & $164.70\pm0.10$ & $425\pm7$ & $24.1\pm1.0$ \\
-        $10.2\pm0.4$ & $17.400\pm0.010$ & $164.80\pm0.10$ & $495\pm7$ & $27.3\pm1.0$ \\
-        $10.0\pm0.4$ & $17.400\pm0.010$ & $164.80\pm0.10$ & $460\pm7$ & $25.9\pm1.0$ \\
-        $10.0\pm0.4$ & $17.390\pm0.010$ & $164.80\pm0.10$ & $470\pm7$ & $26.3\pm1.0$ \\
-        $10.1\pm0.4$ & $17.390\pm0.010$ & $164.90\pm0.10$ & $500\pm7$ & $27.9\pm1.1$ \\
-        $10.1\pm0.4$ & $17.390\pm0.010$ & $164.90\pm0.10$ & $500\pm7$ & $27.8\pm1.1$ \\
-        $9.9\pm0.4$ & $17.380\pm0.010$ & $165.00\pm0.10$ & $460\pm7$ & $26.2\pm1.1$ \\
+        $9.80\pm0.40$ & $17.390\pm0.010$ & $164.50\pm0.10$ & $457\pm7$ & $26.1\pm1.0$ \\
+        $10.1\pm0.40$ & $17.390\pm0.010$ & $164.60\pm0.10$ & $463\pm7$ & $25.7\pm1.0$ \\
+        $9.9\pm0.40$ & $17.400\pm0.010$ & $164.70\pm0.10$ & $425\pm7$ & $24.1\pm1.0$ \\
+        $10.2\pm0.40$ & $17.400\pm0.010$ & $164.80\pm0.10$ & $495\pm7$ & $27.3\pm1.0$ \\
+        $10.0\pm0.40$ & $17.400\pm0.010$ & $164.80\pm0.10$ & $460\pm7$ & $25.9\pm1.0$ \\
+        $10.0\pm0.40$ & $17.390\pm0.010$ & $164.80\pm0.10$ & $470\pm7$ & $26.3\pm1.0$ \\
+        $10.1\pm0.40$ & $17.390\pm0.010$ & $164.90\pm0.10$ & $500\pm7$ & $27.9\pm1.1$ \\
+        $10.1\pm0.40$ & $17.390\pm0.010$ & $164.90\pm0.10$ & $500\pm7$ & $27.8\pm1.1$ \\
+        $9.9\pm0.40$ & $17.380\pm0.010$ & $165.00\pm0.10$ & $460\pm7$ & $26.2\pm1.1$ \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -63,7 +63,7 @@ Also marked is the theoretical value of the Dulong–Petit law according to \aut
     \centering
     \includegraphics[width=0.8\textwidth]{content/plots/C_p.pdf}
     \caption{The measured temperature dependency of the heat capacity at constant pressure $C_p$.
-    The red line represents the theoretical value for the classical Debye model $C = 3 \cdot R = \qty{24.9}{\frac{\joule}{\mol \cdot \kelvin}}$, where $R$ is the general gas constant.}
+    The red line represents the theoretical value for the classical Dulong-Petit law $C = 3 \cdot R = \qty{24.9}{\frac{\joule}{\mol \cdot \kelvin}}$, where $R$ is the general gas constant.}
     \label{fig:C_p}
 \end{figure}
 \FloatBarrier
@@ -74,9 +74,9 @@ The relation between the measured heat capacity at constant pressure $C_p$ and t
         C_p - C_V = 9 \cdot \alpha^2 \cdot \kappa \cdot V_0 \cdot T \, ,
         \label{eqn:C_relation}
 \end{equation}
-where $\alpha$ is the thermal expansion, $\kappa$ the bulk modulus and $V_0 = \frac{M}{\rho}$ the molar volume with the density of cupper $\rho$.
-The values of this parameters $\kappa = \qty{137.8}{\giga\pascal}$ and $\rho = \qty{8960}{\frac{\kilogram}{\metre^3}}$ are taken from source \cite{goodfellow}.
-The thermal expansion depends on the temperature and shows a $\frac{1}{T}$ behavior
+where $\alpha$ is the thermal expansion, $\kappa$ the bulk modulus and $V_0 = \frac{M}{\rho}$ the molar volume with the density of copper $\rho$.
+The parameters $\kappa = \qty{137.8}{\giga\pascal}$ and $\rho = \qty{8960}{\frac{\kilogram}{\metre^3}}$ are taken from source \cite{goodfellow}.
+The thermal expansion depends on the temperature and shows a $\frac{1}{T}$ behaviour
 \begin{equation}
     \alpha = a_1 \cdot \frac{1}{T} + a_2 \, .
 \end{equation}
@@ -99,31 +99,31 @@ The numerical values of $\alpha$ and $C_V$ are listed in \autoref{tab:C_v}.
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{content/plots/C_v.pdf}
-    \caption{The resulting temperature dependency of the heat capacity at constant volume $C_v$.
+    \caption{The resulting temperature dependency of the heat capacity at constant volume $C_V$.
     The red line represents the theoretical value for the classical Debye model $C = 3 \cdot R = \qty{24.9}{\frac{\joule}{\mol \cdot \kelvin}}$, where $R$ is the general gas constant.
     }
     \label{fig:C_v}
 \end{figure}
 \begin{table}
     \centering
-    \caption{The thermal expansion $\alpha$ resulting from the fit for the temperature $T$, the measured heat capacity at constant pressure $C_p$ and the determined heat capacity at constant volume.}
+    \caption{The thermal expansion $\alpha$ resulting from the fit for the temperature $T$, the measured heat capacity at constant pressure $C_p$ and the determined heat capacity at constant volume $C_V$.}
     \label{tab:C_v}
-    \begin{tabular}{c c c c}
+    \begin{tabular}{r r r r}
         \toprule
         $T \,/\, \unit{\kelvin}$ & $C_p \,/\, \unit{\frac{\joule}{\mol \cdot \kelvin}}$ & $\alpha \cdot 10^{-5} \,/\, \unit{\kelvin^{-1}}$ & $C_v \,/\, \unit{\frac{\joule}{\mol \cdot \kelvin}}$\\
         \midrule
-        $93.05\pm0.24$ & $24\pm4$ & $1.003\pm0.006$ & $24\pm4$ \\
-        $102.31\pm0.24$ & $18.6\pm0.8$ & $1.088\pm0.005$ & $18.5\pm0.8$ \\
-        $112.33\pm0.24$ & $19.3\pm0.7$ & $1.164\pm0.005$ & $19.2\pm0.7$ \\
-        $122.15\pm0.24$ & $17.2\pm0.7$ & $1.226\pm0.005$ & $17.0\pm0.7$ \\
-        $132.27\pm0.24$ & $19.7\pm0.8$ & $1.281\pm0.004$ & $19.5\pm0.8$ \\
-        $142.18\pm0.24$ & $23.4\pm0.9$ & $1.327\pm0.004$ & $23.2\pm0.9$ \\
-        $152.15\pm0.24$ & $25.9\pm1.0$ & $1.367\pm0.004$ & $25.6\pm1.0$ \\
-        $162.15\pm0.24$ & $23.5\pm0.9$ & $1.403\pm0.004$ & $23.2\pm0.9$ \\
-        $172.21\pm0.25$ & $24.7\pm0.9$ & $1.434\pm0.004$ & $24.4\pm0.9$ \\
-        $182.30\pm0.25$ & $25.9\pm1.0$ & $1.462\pm0.004$ & $25.6\pm1.0$ \\
-        $192.20\pm0.25$ & $23.4\pm0.9$ & $1.487\pm0.004$ & $23.0\pm0.9$ \\
-        $202.14\pm0.25$ & $24.6\pm1.0$ & $1.509\pm0.004$ & $24.2\pm1.0$ \\
+        $93.05\pm0.24$ & $24.0\pm4.0$ & $1.0030\pm0.0060$ & $24.0\pm4.0$ \\
+        $102.31\pm0.24$ & $18.6\pm0.8$ & $1.0880\pm0.0050$ & $18.5\pm0.8$ \\
+        $112.33\pm0.24$ & $19.3\pm0.7$ & $1.1640\pm0.0050$ & $19.2\pm0.7$ \\
+        $122.15\pm0.24$ & $17.2\pm0.7$ & $1.2260\pm0.0050$ & $17.0\pm0.7$ \\
+        $132.27\pm0.24$ & $19.7\pm0.8$ & $1.2810\pm0.0040$ & $19.5\pm0.8$ \\
+        $142.18\pm0.24$ & $23.4\pm0.9$ & $1.3270\pm0.0040$ & $23.2\pm0.9$ \\
+        $152.15\pm0.24$ & $25.9\pm1.0$ & $1.3670\pm0.0040$ & $25.6\pm1.0$ \\
+        $162.15\pm0.24$ & $23.5\pm0.9$ & $1.4030\pm0.0040$ & $23.2\pm0.9$ \\
+        $172.21\pm0.25$ & $24.7\pm0.9$ & $1.4340\pm0.0040$ & $24.4\pm0.9$ \\
+        $182.30\pm0.25$ & $25.9\pm1.0$ & $1.4620\pm0.0040$ & $25.6\pm1.0$ \\
+        $192.20\pm0.25$ & $23.4\pm0.9$ & $1.4870\pm0.0040$ & $23.0\pm0.9$ \\
+        $202.14\pm0.25$ & $24.6\pm1.0$ & $1.5090\pm0.0040$ & $24.2\pm1.0$ \\
         $212.12\pm0.25$ & $24.6\pm1.0$ & $1.5296\pm0.0035$ & $24.1\pm1.0$ \\
         $222.14\pm0.25$ & $25.1\pm1.0$ & $1.5481\pm0.0035$ & $24.7\pm1.0$ \\
         $231.95\pm0.25$ & $26.1\pm1.0$ & $1.5648\pm0.0035$ & $25.6\pm1.0$ \\
@@ -147,19 +147,19 @@ A simple multiplication with the temperature results in Debye's temperature.
 \autoref{tab:debye} contains the determined Debye's temperature $\theta_\text{D}$ for each temperature $T$ with the condition $T < \qty{170}{\kelvin}$. 
 \begin{table}
     \centering
-    \caption{The Debye's temperature $\theta_\text{D}$ resulting from the heat capacity at constant volume $C_v$ and the temperature $T$.}
+    \caption{The Debye's temperature $\theta_\text{D}$ resulting from the heat capacity at constant volume $C_V$ and the temperature $T$.}
     \label{tab:debye}
-    \begin{tabular}{c c c c}
+    \begin{tabular}{r r r r}
         \toprule
-        $C_v \,/\, \unit{\frac{\joule}{\mol \cdot \kelvin}}$ & $\frac{\theta_\text{D}}{T}$ & $T \,/\, \unit{\kelvin}$ & $\theta_\text{D} \,/\, \unit{\kelvin}$ \\
+        $C_V \,/\, \unit{\frac{\joule}{\mol \cdot \kelvin}}$ & $\frac{\theta_\text{D}}{T}$ & $T \,/\, \unit{\kelvin}$ & $\theta_\text{D} \,/\, \unit{\kelvin}$ \\
         \midrule
-        $24\pm4$ & $1.0$ & $93.05\pm0.24$ & $93.05\pm0.24$ \\
-        $18.5\pm0.8$ & $2.5$ & $102.31\pm0.24$ & $255.8\pm0.6$ \\
-        $19.2\pm0.7$ & $2.4$ & $112.33\pm0.24$ & $269.6\pm0.6$ \\
-        $17.0\pm0.7$ & $2.9$ & $122.15\pm0.24$ & $354.2\pm0.7$ \\
-        $19.5\pm0.8$ & $2.3$ & $132.27\pm0.24$ & $304.2\pm0.6$ \\
+        $24.0\pm4.0$ & $1.0$ & $93.05\pm0.24$ & $93.05\pm0.24$ \\
+        $18.5\pm0.8$ & $2.5$ & $102.31\pm0.24$ & $255.80\pm0.60$ \\
+        $19.2\pm0.7$ & $2.4$ & $112.33\pm0.24$ & $269.60\pm0.60$ \\
+        $17.0\pm0.7$ & $2.9$ & $122.15\pm0.24$ & $354.20\pm0.70$ \\
+        $19.5\pm0.8$ & $2.3$ & $132.27\pm0.24$ & $304.20\pm0.60$ \\
         $23.2\pm0.9$ & $1.2$ & $142.18\pm0.24$ & $170.62\pm0.29$ \\
-        $25.6\pm1.0$ & $0.0$ & $152.15\pm0.24$ & $0.0\pm0$ \\
+        $25.6\pm1.0$ & $0.0$ & $152.15\pm0.24$ & $0.00\pm0.00$ \\
         $23.2\pm0.9$ & $1.2$ & $162.15\pm0.24$ & $194.58\pm0.29$ \\
         \bottomrule
     \end{tabular}
