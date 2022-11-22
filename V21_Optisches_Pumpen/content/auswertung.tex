@@ -2,10 +2,22 @@
 \label{sec:Auswertung}
 
 %Siehe \autoref{fig:plot}!
+\subsection{Berechnung der Landé-Faktoren}
+\label{ssec:lande}
 
 Für beide Resonanzstellen werden jeweils die Stromstärken für die Sweep-Spule $I_\text{s}$ und für die Horizontalspule $I_\text{h}$ in Abhängigkeit von der Frequenz $f$.
-Mit den geometrischen Abmessungen der Spulen aus REF ZU DURCHFÜHRUNG werden zusätzlich die entsprechenden Magentfelder $B$ bestimmt.
-Die Messwerte sind in \autoref{tab:f} aufgeschrieben.
+Mit dem Radius $R$ und der Windungszahl $N$ einer Spule kann über REF ZU HELMHOLTZ das Magentfeld $B$ aus den Stromstärken berechnet werden.
+Die Abmessungen der drei Spulen sind 
+\begin{align*}
+    R_\text{sw} &= \qty{0.16390}{\meter} \\
+    N_\text{sw} &= \qty{11}{} \\
+    R_\text{hor} &= \qty{0.15790}{\meter} \\
+    N_\text{hor} &= \qty{154}{} \\
+    R_\text{ver} &= \qty{0.11735}{\meter} \\
+    N_\text{ver} &= \qty{20}{}.
+\end{align*}
+In horizontaler Richtung werden die erzeugten Magnetfelder der Sweep-Spule und der horizontalen Spule addiert.
+Die so berechnten Messwerte sind in \autoref{tab:f} notiert.
 
 \begin{table}
     \centering
@@ -28,6 +40,39 @@ Die Messwerte sind in \autoref{tab:f} aufgeschrieben.
         \bottomrule
     \end{tabular}
 \end{table}
+
+Die Beziehung zwischen dem Magnetfeld und der Frequenz ist linear, daher wird mittels eines Fits eine Gerade durch die Messwerte gelegt.
+Dieser wird mit der Python Bibliothen Scipy durchgeführt.
+Als Fit-Funktion wird dabei eine Gerade der Form
+\begin{equation}
+    B(f) = a \cdot f + b
+\end{equation}
+genutzt.
+Das Ergenis dieses Fits ist in \autoref{fig:frequenz} dargestellt.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{plots/frequenz.pdf}
+    \caption{Fit der Magnetfelder in Abhängigkeit der Frequenz zur Bestimmung der Landé-Faktoren.}
+    \label{fig:frequenz}
+\end{figure}
+Die vom Fit bestimmten Parameter sind 
+\begin{align*}
+    a_\text{87} &= \qty{1.466(22)e-10}{\per\hertz} \\
+    b_\text{87} &= \qty{2.29(13)e-05}{\tesla} \\
+    a_\text{85} &= \qty{2.141(29)e-10}{\per\hertz} \\
+    b_\text{85} &= \qty{2.42(18)e-05}{\tesla}.
+\end{align*}
+Wird REF ZUR ZEEMAN GLEICHUNG entsprechend umgestellt, ergibt sich der Zusammenhang
+\begin{equation}
+    g_\text{f} = \frac{m_\text{e}}{e \cdot a} \cdot 4\pi.
+\end{equation}
+Darüber wird der Landé-Faktor für beide Isotope 
+\begin{align*}
+    g_\text{f,87} &= \qty{0.487(7)}{} \\
+    g_\text{f,85} &= \qty{0.334(5)}{}.
+\end{align*}
+bestimmt.
+
 
 \begin{table}
     \centering
