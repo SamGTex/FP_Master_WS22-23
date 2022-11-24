@@ -5,8 +5,8 @@
 \subsection{Berechnung der Landé-Faktoren}
 \label{ssec:lande}
 
-Für beide Resonanzstellen werden jeweils die Stromstärken für die Sweep-Spule $I_\text{s}$ und für die Horizontalspule $I_\text{h}$ in Abhängigkeit von der Frequenz $f$.
-Mit dem Radius $R$ und der Windungszahl $N$ einer Spule kann über REF ZU HELMHOLTZ das Magentfeld $B$ aus den Stromstärken berechnet werden.
+Für beide Resonanzstellen wird jeweils die Stromstärke für die Sweep-Spule $I_\text{s}$ und für die Horizontalspule $I_\text{h}$ in Abhängigkeit von der Frequenz $f$ gemessen.
+Mit dem Radius $R$ und der Windungszahl $N$ einer Spule kann über \autoref{eqn:helmholtz} das Magentfeld $B$ aus den Stromstärken berechnet werden.
 Die Abmessungen der drei Spulen sind 
 \begin{align*}
     R_\text{sw} &= \qty{163.90}{\milli\meter} & N_\text{sw} &= \qty{11}{}\\
@@ -15,6 +15,7 @@ Die Abmessungen der drei Spulen sind
 \end{align*}
 In horizontaler Richtung werden die erzeugten Magnetfelder der Sweep-Spule und der horizontalen Spule addiert.
 Die so berechnten Messwerte sind in \autoref{tab:f} notiert.
+Die Unsicherheiten werden mit der Python-Bibliothek \textit{uncertainties} \cite{uncertainties} berechnet.
 \begin{table}
     \centering
     \caption{Horizontale Magnetfelder an den Resonanzstellen von beiden Isotopen mit eingestellten Stromstärken der Spulen.}
@@ -23,27 +24,27 @@ Die so berechnten Messwerte sind in \autoref{tab:f} notiert.
         \toprule
         $f \,/\, \unit{\kilo\hertz}$ & $I_\text{1,s} \,/\, \unit{\ampere}$ & $I_\text{1,h} \,/\, \unit{\ampere}$ & $B_\text{1} \,/\, \unit{\milli\tesla}$ & $I_\text{2,s} \,/\, \unit{\ampere}$ & $I_\text{2,h} \,/\, \unit{\ampere}$ & $B_\text{2} \,/\, \unit{\micro\tesla}$\\
         \midrule
-        $100 $ & $625.0\pm1.0$ & $734.0\pm1.0$ & $0.0\pm3.0$ & $0.0\pm3.0$  & $37.7\pm2.6$ & $44.3\pm2.6$ \\
-        $200 $ & $440.0\pm1.0$ & $677.0\pm1.0$ & $30.0\pm3.0$ & $30.0\pm3.0$  & $52.9\pm2.6$ & $67.2\pm2.6$ \\
-        $300 $ & $422.0\pm1.0$ & $775.0\pm1.0$ & $48.0\pm3.0$ & $48.0\pm3.0$  & $67.6\pm2.6$ & $88.9\pm2.6$ \\
-        $400 $ & $296.0\pm1.0$ & $770.0\pm1.0$ & $72.0\pm3.0$  & $72.0\pm3.0 $ & $81.0\pm2.6$ & $109.6\pm2.6$ \\
-        $500 $ & $306.0\pm1.0$ & $898.0\pm1.0$ & $90.0\pm3.0$  & $90.0\pm3.0 $ & $97.4\pm2.6$ & $133.1\pm2.6$ \\
-        $600 $ & $322.0\pm1.0$ & $710.0\pm1.0$ & $102.0\pm3.0$ & $126.0\pm3.0$ & $108.9\pm2.6$ & $153.3\pm2.6$ \\
-        $700 $ & $334.0\pm1.0$ & $698.0\pm1.0$ & $120.0\pm3.0$ & $150.0\pm3.0$ & $125.4\pm2.6$ & $173.7\pm2.6$ \\
-        $800 $ & $380.0\pm1.0$ & $432.0\pm1.0$ & $132.0\pm3.0$ & $192.0\pm3.0$ & $138.7\pm2.6$ & $194.4\pm2.6$ \\
-        $900 $ & $607.0\pm1.0$ & $554.0\pm1.0$ & $132.0\pm3.0$ & $210.0\pm3.0$ & $152.4\pm2.6$ & $217.6\pm2.6$ \\
-        $1000$ & $783.0\pm1.0$ & $710.0\pm1.0$ & $144.0\pm3.0$ & $222.0\pm3.0$ & $173.5\pm2.6$ & $237.5\pm2.6$ \\
+        $100 $ & $625.0\pm1.0$ & $734.0\pm1.0$ & $0.0\pm3.0$ & $0.0\pm3.0$  &     $37.7\pm3.0$ & $44.3\pm2.6$ \\
+        $200 $ & $440.0\pm1.0$ & $677.0\pm1.0$ & $30.0\pm3.0$ & $30.0\pm3.0$    & $52.9\pm3.0$ & $67.2\pm2.6$ \\
+        $300 $ & $422.0\pm1.0$ & $775.0\pm1.0$ & $48.0\pm3.0$ & $48.0\pm3.0$    & $67.6\pm3.0$ & $88.9\pm2.6$ \\
+        $400 $ & $296.0\pm1.0$ & $770.0\pm1.0$ & $72.0\pm3.0$  & $72.0\pm3.0 $  & $81.0\pm3.0$ & $109.6\pm2.6$ \\
+        $500 $ & $306.0\pm1.0$ & $898.0\pm1.0$ & $90.0\pm3.0$  & $90.0\pm3.0 $  & $97.4\pm3.0$ & $133.1\pm2.6$ \\
+        $600 $ & $322.0\pm1.0$ & $710.0\pm1.0$ & $102.0\pm3.0$ & $126.0\pm3.0$ & $108.9\pm3.0$ & $153.3\pm2.6$ \\
+        $700 $ & $334.0\pm1.0$ & $698.0\pm1.0$ & $120.0\pm3.0$ & $150.0\pm3.0$ & $125.4\pm3.0$ & $173.7\pm2.6$ \\
+        $800 $ & $380.0\pm1.0$ & $432.0\pm1.0$ & $132.0\pm3.0$ & $192.0\pm3.0$ & $138.7\pm3.0$ & $194.4\pm2.6$ \\
+        $900 $ & $607.0\pm1.0$ & $554.0\pm1.0$ & $132.0\pm3.0$ & $210.0\pm3.0$ & $152.4\pm3.0$ & $217.6\pm2.6$ \\
+        $1000$ & $783.0\pm1.0$ & $710.0\pm1.0$ & $144.0\pm3.0$ & $222.0\pm3.0$ & $173.5\pm3.0$ & $237.5\pm2.6$ \\
         \bottomrule
     \end{tabular}
 \end{table}
-Die Beziehung zwischen dem Magnetfeld und der Frequenz ist linear, daher eine Gerade durch die Messwerte gelegt.
-Dieser wird mit der Python Bibliothen Scipy durchgeführt. QUELLE
+Die Beziehung zwischen Magnetfeld und der Frequenz ist linear, daher wird eine Gerade durch die Messwerte gelegt.
+Der Fit wird mit der Python Bibliothen Scipy \cite{scipy} durchgeführt.
 Als Fit-Funktion wird dabei eine Gerade der Form
 \begin{equation*}
     B(f) = a \cdot f + b
 \end{equation*}
-genutzt.
-Das Ergenis dieses Fits ist in \autoref{fig:frequenz} dargestellt.
+verwendet.
+Das Ergebnis dieses Fits ist in \autoref{fig:frequenz} dargestellt.
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{plots/frequenz.pdf}
@@ -52,35 +53,35 @@ Das Ergenis dieses Fits ist in \autoref{fig:frequenz} dargestellt.
 \end{figure}
 Die vom Fit bestimmten Parameter sind 
 \begin{align*}
-    a_\text{87} &= \qty{1.466(22)e-10}{\per\hertz} \\
+    a_\text{87} &= \qty{1.466(22)e-10}{\tesla\per\hertz} \\
     b_\text{87} &= \qty{2.29(13)e-05}{\tesla} \\
-    a_\text{85} &= \qty{2.141(29)e-10}{\per\hertz} \\
+    a_\text{85} &= \qty{2.141(29)e-10}{\tesla\per\hertz} \\
     b_\text{85} &= \qty{2.42(18)e-05}{\tesla}.
 \end{align*}
-Wird REF ZUR ZEEMAN GLEICHUNG entsprechend umgestellt, ergibt sich der Zusammenhang
+Wird \autoref{eqn:resonanzfrequenz} entsprechend umgestellt, ergibt sich der Zusammenhang
 \begin{equation}
-    g_\text{f} = \frac{m_\text{e}}{e \cdot a} \cdot 4\pi.
+    g_\text{f} = \frac{m_\text{e}}{e \cdot a} \cdot 4\pi 
 \end{equation}
-Darüber wird der Landé-Faktor für beide Isotope 
+Darüber wird der Landé-Faktor für beide Isotope zu
 \begin{align*}
-    g_\text{f,87} &= \qty{0.487(7)}{} \\
-    g_\text{f,85} &= \qty{0.334(5)}{}.
+    g_\text{f,87} &= 0.487 \pm 0.007 \\
+    g_\text{f,85} &= 0.334 \pm 0.005
 \end{align*}
 bestimmt.
 
 Aus dem Parameter $b$ kann das horizontale Erdmagnetfeld berechnet werden.
-Dafür wird der Mittelwert bestimmt.
+Dafür wird der Mittelwert von $b_\text{87}$ und $b_\text{85}$ bestimmt.
 Damit erhält man für das Erdmagnetfeld
 \begin{equation*}
     B_\text{erd} = \qty{2.36(11)e-05}{\tesla}.
 \end{equation*}
 
 Zusätzlich kann mit den Landé-Faktoren der Kernspin der Isotopen berechnet werden.
-Dafür wird REF ZU FORMEL nach dem Kernspin $I$ umgeformt.
+Dafür wird \autoref{eqn:g_F} nach dem Kernspin $I$ umgeformt.
 Damit ergeben sich die Kernspins 
 \begin{align*}
-    I_\text{87} &= \qty{1.552(30)}{} \\
-    I_\text{85} &= \qty{2.50(4)}{}.
+    I_\text{87} &= 1.55 \pm 0.03 \\
+    I_\text{85} &= 2.50 \pm 0.04.
 \end{align*}
 
 \subsection{Isotopenverhältnis}
@@ -92,7 +93,7 @@ Denn das Verhältnis der Minima ist ebenso das Verhältnis der Isotope im Gasgem
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{plots/signalbild.jpeg}
-    \caption{Oszillatorbild bei $\qty{100}{\kilo\hertz}$.}
+    \caption{Oszillatorbild bei $\qty{100}{\kilo\hertz}$. Der erste Peak stellt den Fall für kein Magnetfeld dar, der zweite und dritte sind jeweils die Resonanzstellen der Isotope.}
     \label{fig:signalbild}
 \end{figure}
 Aus dem Bild ergibt sich das Isotopenverhältnis
@@ -110,15 +111,15 @@ bestimmt.
 \label{ssec:zeeman}
 
 Bei zu hohen Magnetfeldern treten bei der Zeeman-Aufspaltung quadratische Terme auf.
-Über FORMEL kann diese Aufspaltung berechnet werden.
+Über \autoref{eqn:zeeman_2} kann diese Aufspaltung berechnet werden.
 Mit den berechneten Landé-Faktoren $g_\text{f}$, den magnetischen Quantenzahlen $M$ und der Hyperfeinstruktur 
 \begin{align*}
-    h_{87} &= \qty{4.53e-24}{\joule} 
+    h_{87} &= \qty{4.53e-24}{\joule} \\
     h_{85} &= \qty{2.01e-24}{\joule}
 \end{align*}
 der Isotope kann die quadratische Zeeman-Aufspaltung 
 \begin{align*}
-    \Delta Z_{87} &= \qty{-4.29(13)e-31}{\joule} 
+    \Delta Z_{87} &= \qty{-4.29(13)e-31}{\joule} \\
     \Delta Z_{85} &= \qty{-1.341(29)e-30}{\joule}
 \end{align*}
 bestimmt werden.
@@ -127,7 +128,7 @@ bestimmt werden.
 \label{ssec:transient}
 
 Die eingestellten Amplituden der Frequenz und die daraus resultierenden Periodendauern sind in \autoref{tab:A} notiert.
-Alle Messwerte sind bei der Resonazstelle von $\qty{100}{\kilo\hertz}$ aufgenommen worden.
+Alle Messwerte sind bei der Resonanzstelle von $\qty{100}{\kilo\hertz}$ aufgenommen worden.
 \begin{table}
     \centering
     \caption{Periodendauer der Rabi-Oszillationen in Abhängigkeit der RF-Amplitude für beide Isotope.}
@@ -151,12 +152,11 @@ Alle Messwerte sind bei der Resonazstelle von $\qty{100}{\kilo\hertz}$ aufgenomm
         \bottomrule
     \end{tabular}
 \end{table}
-Durch die Messwert wird eine hyperpolische Funktion der Form
+Durch die Messwerte wird eine hyperbolische Funktion der Form
 \begin{equation*}
     T = a + \frac{b}{x - c}
 \end{equation*}
 gelegt. 
-Der Fit wird erneut mit Scipy durchgeführt.
 Das Ergbnis ist in \autoref{fig:amplitude} dargestellt.
 \begin{figure}
     \centering
@@ -174,7 +174,6 @@ Das Verhältnis ist hier
 \begin{equation*}
     \frac{b_{87}}{b_{85}} = \qty{1.67(9)}{}.
 \end{equation*}
-
 Um die aufsteigende Flanke ebenfalls mit einer Funktion zu fitten, werden die Messwerte direkt aus den Oszillatorbildern entnommen.
 Die Bilder sind in \autoref{fig:oszi} abgebildet.
 \begin{figure}
@@ -183,13 +182,11 @@ Die Bilder sind in \autoref{fig:oszi} abgebildet.
         \centering
         \includegraphics[width=\textwidth]{plots/peak1_5V.jpeg}
         \caption{Oszillatorbild von $\ce{^{87}Rb}$ bei $\qty{5}{\volt}$}
-        \label{fig:durchschallung}
     \end{subfigure}
     \begin{subfigure}{0.4\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/peak2_2V.jpeg}
         \caption{Oszillatorbild von $\ce{^{85}Rb}$ bei $\qty{2}{\volt}$}
-        \label{fig:impuls-echo}
     \end{subfigure}
     \caption{Oszillatorbilder der aufsteigenden Flanke.}
     \label{fig:oszi}
@@ -197,11 +194,11 @@ Die Bilder sind in \autoref{fig:oszi} abgebildet.
 Daraus werden per Augenmaß die Werte in \autoref{tab:oszi} abgelesen.
 \begin{table}
     \centering
-    \caption{Periodendauer und detektierte Spannung aus den Oszillatorbildern.}
+    \caption{Periodendauer und die detektierte Spannung aus den Oszillatorbildern.}
     \label{tab:oszi}
     \begin{tabular}{r r r r}
         \toprule
-        $t_1 \,/\, \unit{\milli\second}$ & $U_\text{87} \,/\, 2 $\cdot$ \unit{\volt}$ & $t_2 \,/\, \unit{\milli\second}$  & $U_\text{85} \,/\, 5 \cdot \unit{\volt}$\\
+        $t_1 \,/\, \unit{\milli\second}$ & $U_\text{87} \,/\, 2 \unit{\volt}$ & $t_2 \,/\, \unit{\milli\second}$  & $U_\text{85} \,/\, 5 \unit{\volt}$\\
         \midrule
         $0$   & $0.0\pm 0.1$ & $0$   & $0.0\pm 0.1$\\
         $10$  & $4.6\pm 0.1$ & $5$   & $2.1\pm 0.1$\\
@@ -226,3 +223,17 @@ durchgeführt und das Ergebnis des Fits sind die Parameter
     a_\text{87} &= \qty{3.195(18)}{} & b_{87} &= \qty{-3.19(5)}{} &  c_{87} &= \qty{-0.127(5)}{}\\
     a_\text{85} &= \qty{0.824(9)}{} & b_{85} &= \qty{-0.819(20)}{} &  c_{85} &= \qty{-0.133(8)}{}.
 \end{align*}
+Die gefitteten Exponentialfunktionen sind in \autoref{fig:e87} und \autoref{fig:e85} dargestellt.
+\begin{figure}
+    \centering
+        \includegraphics[width=\textwidth]{plots/e87.pdf}
+        \caption{Fit der abgelesenen Messwerte von $\ce{^{87}Rb}$ bei $\qty{5}{\volt}$}
+    \label{fig:e87}
+\end{figure}
+
+\begin{figure}
+    \centering
+        \includegraphics[width=\textwidth]{plots/e85.pdf}
+        \caption{Fit der abgelesenen Messwerte von $\ce{^{85}Rb}$ bei $\qty{2}{\volt}$}
+    \label{fig:e85}
+\end{figure}
