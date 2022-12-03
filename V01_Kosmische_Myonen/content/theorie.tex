@@ -1,2 +1,44 @@
 \section{Theorie}
 \label{sec:Theorie}
+
+\subsection{Das Myon}
+\label{ssec:myon}
+
+Myonen sind Elementarteilchen des Standardmodells der Teilchenphysik.
+Die Fermionen des Standardmodells sind in drei Generationen eingeteilt, wobei das Myon der 2. Generation angehört.
+Es ähnelt dabei stark dem Elektron aus der 1. Generation. 
+So besitzen beide Teilchen einen Spin $S = \frac{1}{2}$ und eine Ladung von $q = -e$.
+Das Myon ist mit einer Masse von $m = \qty{105.658}{\MeV}$ über 200 mal schwerer als das Elektron.
+
+Die Myonen die auf der Erdoberfläche ankommen stammen aus Wechselwirkungen der primären Kosmischen Strahlung mit der Atmosphäre.
+Dort entstehen größtenteils geladene Pionen, die wiederum wie folgt zerfallen:
+\begin{align*}
+    \pi^- &\rightarrow \mu^- + \bar{\nu}_{\mu} & \pi^+ &\rightarrow \mu^+ + \nu_{\mu}
+\end{align*}
+Die entstandenen Myonen haben eine durchschnittliche Lebensdauer von $\tau = \qty{2.197}{\micro\second}$.
+Myonen zerfallen über:
+\begin{align*}
+    \mu^- &\rightarrow \symup{e}^- + \bar{\nu}_\text{e} + \nu_{\mu} & \mu^+ &\rightarrow \symup{e}^+ + \nu_{\text{e}} + \bar{\nu}_{\mu}
+\end{align*}
+\subsection{Lebensdauer}
+\label{ssec:lebensdauer}
+
+Alle instabilen Teilchen besitzen notwendigerweise eine mittlere Lebensdauer.
+Nach dieser Zeit zerfallen sie in andere Teilchen.
+Allgemein ist die Wahrscheinlichkeit, dass ein Teilchen in einer Zeit $\text{d}t$ zerfällt 
+\begin{equation}
+    \text{d}W = \lambda \text{d}t.
+\end{equation}
+Dabei ist $\lambda$ die Zerfallskonstante für diesen Zerfall.
+Wird diese Überlegung auf eine Anzahl $N$ Teilchen angewendet, definieren wir die Änderung der Teilchenzahl $\text{d}N$.
+Die Änderung der Teilchenzahl in der Zeit $\text{d}t$ ist dann definiert als
+\begin{equation}
+    \text{d}N = - N \lambda \text{d}t.
+\end{equation}
+Diese Differentialgleichung kann mit dem Ansatz 
+\begin{equation}
+    N(t) = N_0 \exp{- \lambda t}
+\end{equation}
+gelöst werden.
+Damit erhalten wir das Zerfallsgesetz, welches zu jedem Zeitpunkt $t$ angibt, wie viele Teilchen von den ursprünglich $N_0$ noch nicht zerfallen sind.
+Aus der Zerfallskonstante kann dann die mittlere Lebensdauer $\tau = \frac{1}{\lambda}$ bestimmt werden.
