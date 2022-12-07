@@ -111,9 +111,10 @@ Die ermittelten Kanäle für bestimmte eingestellte Impulsdauern am Generator si
 \end{table}
 Die Kanäle sind mit der Impulsdauer linear korreliert.
 Ein linearer Fit der Form
-\begin{equation*}
+\begin{equation}
     t = a \cdot ch + b
-\end{equation*}
+    \label{eqn:fit_kanal}
+\end{equation}
 wird durchgeführt, wobei $ch$ die Kanäle ("`channel"') im Bereich $[0, 511]$ und $t$ die Impulsdauer beschreibt.
 Die Ausgleichsgerade mit den Parametern
 \begin{align*}
@@ -148,16 +149,36 @@ Die Ereignisrate beträgt im Durchschnitt etwa $n = \qty{28.5}{\frac{1}{\second}
 Die Wahrscheinlichkeit, dass während der Suchzeit $T_S$ ein weiteres Myon in den Detektor trifft folgt einer Poisson-Verteilung.  
 Der Untergrund wird mittels \autoref{eqn:} auf %REF???
 \begin{equation}
-    N_\text{Untergrund,1} = \qty{1283(1)}{}
+    N_\text{Untergrund} = \qty{1283(1)}{}
 \end{equation}
 abgeschätzt.
 Dabei verteilt sich der Untergrund auf alle Kanäle.
+
 \FloatBarrier
 
 \subsection{Experimentell bestimmte Untergrundrate und Lebensdauer der Myonen}
-- nur Bins ungleich 0
-- kanäle mittels ausgleichgerade in zeit umrechnen
-- exp. fit
+Die Lebensdauer der Myonen $\tau$ wird mithilfe einer exponentiellen Ausgleichskurve bestimmt.
+Zuerst wird der Untergrund als Fit-Variable $U_1$ behandelt.
+Es wird eine Ausgleichsrechnung mit der Funktion
+\begin{equation}
+    N(t) = N_0 \cdot e^{- \lambda t} + U_1
+\end{equation}
+durchgeführt.
+Dabei werden die Kanäle im Bereich $[4, 218]$ beachtet.
+Die ersten 4 Kanäle weisen eine sehr geringe Ereignisrate auf und sind auf technische Ursachen zurückzuführen.
+Im Anfangsbereich werden hohe Ereignisraten erwartet.
+Setzt man den Kanal $218$ in \autoref{eqn:fit_kanal} ein, so erhält man eine Zerfallszeit von $\sim \qty{10}{\micro\second}$.
+Dies entspricht der Suchzeit $T_S$.
+Alle weiteren Kanäle weisen daher sehr geringe bis keine Ereignisse auf und dürfen nicht in der Ausgleichsrechnung berücksichtigt werden.
+\\
+Die betrachteten Kanäle werden analog in die entsprechenden Zerfallszeiten umgerechnet und anschließend der Fit durchgeführt.
+Dabei ergibt sich für die Lebensdauer $\tau = 1/\lambda$ und für den Untergrund $U_1$
+\begin{align}
+    \tau_2 &= \qty{2.11(5)}{\micro\second},\\
+    U_1 &= \qty{1.05(41)}{} \,.
+\end{align}
+
+Die Messwerte und Exponentialkurve sind in \autoref{fig:lebensdauer2} dargestellt.
 
 \begin{figure}
     \centering
@@ -165,5 +186,5 @@ Dabei verteilt sich der Untergrund auf alle Kanäle.
     \caption{Die Anzahl detektierter Ereignisse $N$ die ein Start- und Stopsignal ausgelöst haben in Abhängigkeit der gemessenen Zerfallszeit $t$.
     Die exponentielle Ausgleichskurve führt direkt zur Lebensdauer der kosmischen Myonen.
     }
-    \label{fig:lebensdauer}
+    \label{fig:lebensdauer2}
 \end{figure}
