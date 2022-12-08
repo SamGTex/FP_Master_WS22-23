@@ -133,6 +133,7 @@ Jedem Kanal kann jetzt eine Zeit zugeordnet werden.
 \FloatBarrier
 
 \subsection{Statistische Abschätzung der Untergrundereignisse}
+\label{sec:untergrund}
 Die eigentliche Messung der Lebensdauer der Myonen umfasst eine Messzeit von
 \begin{equation*}
     t_\text{mess} = \qty{158234}{\second} \,.
@@ -150,13 +151,13 @@ Die Wahrscheinlichkeit, dass während der Suchzeit $T_S$ ein weiteres Myon in de
 Der Untergrund wird mittels \autoref{eqn:} auf %REF???
 \begin{equation}
     N_\text{Untergrund} = \qty{1283(1)}{}
+    \label{eqn:untergrund}
 \end{equation}
 abgeschätzt.
 Dabei verteilt sich der Untergrund auf alle Kanäle.
-
 \FloatBarrier
 
-\subsection{Experimentell bestimmte Untergrundrate und Lebensdauer der Myonen}
+\subsection{Lebensdauer kosmischer Myonen}
 Die Lebensdauer der Myonen $\tau$ wird mithilfe einer exponentiellen Ausgleichskurve bestimmt.
 Zuerst wird der Untergrund als Fit-Variable $U_1$ behandelt.
 Es wird eine Ausgleichsrechnung mit der Funktion
@@ -177,13 +178,46 @@ Dabei ergibt sich für die Lebensdauer $\tau = 1/\lambda$ und für den Untergrun
     \tau_2 &= \qty{2.11(5)}{\micro\second},\\
     U_1 &= \qty{1.05(41)}{} \,.
 \end{align}
-
-Die Messwerte und Exponentialkurve sind in \autoref{fig:lebensdauer2} dargestellt.
-
+Die Messwerte und exponentielle Ausgleichskurve sind in \autoref{fig:lebensdauer2} dargestellt.
 \begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{content/plots/lifetime.pdf}
     \caption{Die Anzahl detektierter Ereignisse $N$ die ein Start- und Stopsignal ausgelöst haben in Abhängigkeit der gemessenen Zerfallszeit $t$.
+    Die exponentielle Ausgleichskurve führt direkt zur Lebensdauer der kosmischen Myonen.
+    }
+    \label{fig:lebensdauer2}
+\end{figure}
+\\
+Zuletzt wird der in \autoref{sec:untergrund} statistisch abgeschätzte Untergrund zur Bestimmung der Lebensdauer der kosmischen Myonen verwendet.
+In der exponentiellen Ausgleichsfunktion
+\begin{equation}
+    N(t) = N_0 \cdot e^{- \lambda t}
+    \label{eqn:exp2}
+\end{equation}
+wird nicht weiter eine konstante Verschiebung der Zählraten durch den Untergrund berücksichtigt.
+Es wird angenommen, dass sich der Untergrund (\autoref{eqn:untergrund}) gleichmäßig auf alle Kanäle verteilt.
+Dabei werden weiter die Kanäle $[4,218]$ betrachtet.
+Der Untergrund pro Kanal ergibt sich dann zu
+\begin{equation}
+    U_2 = \qty{5.97(1)}{\frac{1}{ch}}
+\end{equation}
+und wird von den gemessenen Ereignissen abgezogen.
+Dabei kommt es bei Kanälen mit bereits wenigen Ereignissen (ab $\sim \qty{7}{\micro\second}$) zu negativen Zählraten.
+Die Zählraten folgen einer Exponentialfunktion, die mathematisch keine negativen Werte annehmen darf.
+Um physikalisch sinnvolle Ergebnisse zu erhalten, werden bei der Ausgleichsrechnung Zerfallszeiten bis $\qty{6.96}{\micro\second}$ berücksichtigt.
+\\
+Aus einer Ausgleichsrechnung mit \autoref{eqn:exp2} folgt
+\begin{equation}
+    \tau = \qty{1.93(4)}{\micro\second}
+\end{equation}
+für die Lebensdauer der Myonen unter Beachtung des statistich abgeschätzten Untergrunds.
+Die korrigierten Ereigniszahlen $N$ für die Zerfallszeiten der Kanäle $[4,218]$, sowie die Ausfleichskurve sind in \autoref{fig:lebensdauer2} dargestellt.
+Die für die Ausgleichsrechnung verwendeten Messwerte sind in gelb markiert.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{content/plots/lifetime2.pdf}
+    \caption{Die Anzahl detektierter Ereignisse $N$ die ein Start- und Stopsignal ausgelöst haben in Abhängigkeit der gemessenen Zerfallszeit $t$.
+    Die in gelb markierten Messwerte werden für die Ausgleichsrechnung verwendet.
     Die exponentielle Ausgleichskurve führt direkt zur Lebensdauer der kosmischen Myonen.
     }
     \label{fig:lebensdauer2}
