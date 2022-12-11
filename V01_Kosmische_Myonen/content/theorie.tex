@@ -42,3 +42,28 @@ Diese Differentialgleichung kann mit dem Ansatz
 gelöst werden.
 Damit erhalten wir das Zerfallsgesetz, welches zu jedem Zeitpunkt $t$ angibt, wie viele Teilchen von den ursprünglich $N_0$ noch nicht zerfallen sind.
 Aus der Zerfallskonstante kann dann die mittlere Lebensdauer $\tau = \frac{1}{\lambda}$ bestimmt werden.
+
+\subsection{Untergrund}
+\label{ssec:untergrund}
+
+Der Versuch basiert darauf, dass Myonen und ihre Zerfallsteilchen die Elektronen den Szintillator auslösen und so letztenendes ein Signal erzeugt wird.
+Zwischen Myon und Elektron kann dabei nicht unterschieden werden, es ist also möglich, dass ein zweites Myon den Szintillator auslöst und später als ein Elektron gewertet wird.
+Um diesen Untergrund in der Messung zu verhindern werden einige Vorüberlegungen getroffen.
+Die Anzahl gemessener Myonen $n$ folgt einer Poissonverteilung
+\begin{equation}
+    p_\lambda (n) = \frac{\lambda ^n}{n !} \cdot \exp{- \lambda},
+\end{equation}
+wobei
+\begin{equation}
+    \lambda = \frac{N_\text{starts}}{t_\text{ges}} \cdot T_\text{s}
+\end{equation}
+der Erwartungswert der Verteilung ist.
+Hierbei ist $N_\text{starts}$ die Anzahl der detektierten Startimpulse, also aller Myonen und $t_\text{ges}$ die gesamte Messzeit des Experiments.
+Die Suchzeit $T_\text{s}$ ist die Zeitspanne in der auf ein Elektronsignal gewartet wird, nachdem ein Startimpuls gemessen wurde.
+Man kann sich nun überlegen, dass der Untergrund sich über 
+\begin{equation}
+    U = N_\text{starts} \cdot p_\lambda (1)
+\end{equation}
+annähern lässt.
+Mit $p_\lambda (1)$ erhält man die Wahrscheinlichkeit dafür, dass genau ein Myon während der Suchzeit in den Szintillator trifft und die Messung verfälscht.
+Jedes weitere Myon würde wieder ein Startsignal auslösen.
