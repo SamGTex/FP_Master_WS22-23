@@ -3,19 +3,20 @@
 
 Bevor die komplette Schaltung aufgebaut wird, werden die einzelnen Bauteile überprüft und kalibriert.
 Wenn die Photomultiplier mit Strom versorgt werden, sollten am Oszilloskop Signale erkennbar sein.
-Diese Signalrate wird im Folgenden über die Schwellspannungen an den Diskriminatoren auf etwa $30$ Signale pro $\unit{\second}$ eingestellt.
+Diese Signalrate wird im Folgenden über die Schwellspannungen an den Diskriminatoren auf etwa $\qty{30}{\text{Signale}\cdot \second^{-1}}$ eingestellt.
 Um die Impulse zu zählen wird zusätzlich ein Impulszähler angeschlossen.
-Die Pulsdauer der Diskriminatoren kann am Oszilloskop überprüft werden und auf etwa $\Delta = \qty{10}{\nano\second}$ festgelegt.
-
+Die Pulsdauer der Diskriminatoren wird am Oszilloskop überprüft und auf etwa $\Delta t = \qty{10}{\nano\second}$ festgelegt.
+\\
 Im nächsten Schritt wird die Schaltung bis zur Koinzidenz aufgebaut und der dortige Ausgang überprüft.
-Dafür wird das Ausgangssignal der Koinzidenz an einen Impulszähler angeschlossen und systematisch die Verzögerung an der Verzögerungsleitung erhöht.
+Dafür wird das Ausgangssignal der Koinzidenz an einen Impulszähler angeschlossen und systematisch die Verzögerung an einer der Verzögerungsleitungen erhöht.
 Wichtig ist hierbei, dass der Messbereich groß genug ist, damit die Halbwertszeit bestimmt werden kann.
-Nach der Messung wird eine Verzögerung ausgewählt, bei der die Signalrate etwa $20$ Signale pro $\unit{\second}$ beträgt.
-
+Die gleiche Messung wird mit der anderen Verzögerungsleitung durchgeführt.
+Nach der Messung wird eine Verzögerung ausgewählt, bei der die Signalrate etwa $\qty{20}{\text{Signale}\cdot \second^{-1}}$ beträgt.
+\\
 Der restliche Teil der Schaltung wird gemäß \autoref{fig:szintillator} aufgebaut.
 Allerdings wird der Doppelimpulsgenerator an den Vielkanalanalysator angeschlossen, damit dieser kalibriert werden kann.
-Am Doppelimpulsgenerator wird eine Zeit zwischen den beiden Impulsen ausgewählt, die die Zerfallszeit simuliert.
-Damit kann überprüft werden welche Zerfallszeit in welches Bin des Vielkanalanalysators eingeordnet wird.
-Es sollen mindestens zehn Messwerte im Bereich $\qty{0.3}{\micro\second}$ bis $\qty{9.9}{\micro\second}$ aufgenommen werden.
+Der Doppelimpulsgenerator erzeugt zwei zeitlich getrennte Impulse mit variablen Zeitabstand.
+Damit kann überprüft werden welche Zerfallszeit in welchen Kanal des Vielkanalanalysators eingeordnet wird.
+Es werden mindestens zehn Messwerte im Bereich $\qty{0.3}{\micro\second}$ bis $\qty{9.9}{\micro\second}$ aufgenommen.
 Nach dieser Messung werden die Photomultiplier wieder angeschlossen und die Schaltung sollte nun \autoref{fig:szintillator} entsprechen.
-Die eigentliche Messung der Lebenszeit läuft nun für etwa $\qty{20}{\hour}$ bis $\qty{30}{\hour}$.
+Die eigentliche Messung der Lebenszeit läuft nun für etwa $\qty{44}{\hour}$.

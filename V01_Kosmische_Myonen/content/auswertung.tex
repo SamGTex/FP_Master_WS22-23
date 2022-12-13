@@ -3,7 +3,7 @@
 
 %Siehe \autoref{fig:plot}!
 \subsection{Verzögerungszeit}
-Im folgenden wird für Messgrößen die eine Anzahl beschreiben, eine Poisson-verteilte Messunsicherheit $\sigma = \sqrt{N}$ angenommen.
+Im Folgenden wird für Messgrößen, die eine Anzahl beschreiben eine Poisson-verteilte Messunsicherheit $\sigma = \sqrt{N}$ angenommen.
 In weiteren Rechnungen wird mithilfe der Python-Bibliothek \textit{uncertainties}\cite{uncertainties} die Fehlerfortpflanzung durchgeführt.
 \\
 Bevor die Messung zur Bestimmung der Lebensdauer der Myonen beginnen kann, muss die Apparatur justiert und kalibriert werden.
@@ -44,14 +44,15 @@ Eine Verzögerung auf der linken bzw. rechten Leitung entspricht einer negativen
 \end{table}
 \begin{figure}
     \centering
-    \includegraphics[width=0.95\textwidth]{content/plots/verzoegerungszeit.pdf}
+    \includegraphics[width=0.9\textwidth]{content/plots/verzoegerungszeit.pdf}
     \caption{Die gemessene Ereignisrate $N$ in Abhängigkeit der Verzögerungszeit $\Delta t$.
-    Die Messwerte werden in 3 Bereiche unterteilt, wobei die ersten und lette
+    Die Messwerte werden in 3 Bereiche unterteilt, wobei die ersten und letzten Messwerte nicht berücksichtigt werden.
     Der Anstieg und Abfall wird näherungsweise jeweils durch einen linearen Fit dargestellt.
     Das Mittel über die zum Plateau zugehörigen Messwerte definiert die Plateau-Höhe.}
     \label{fig:verzoegerung}
 \end{figure}
-Die Messwerte werden in einen Anstiegs-, Aufstiegs- und Plateau-Bereich unterteilt.
+\\
+Die Messwerte werden in einen Anstiegs-, Abstiegs- und Plateau-Bereich unterteilt.
 Statt die Gesamtanzahl gemessener Impulse in einem bestimmten Zeitraum wird die Impulsrate pro Sekunde betrachtet.
 Im Mittel ergibt sich eine Plateau-Höhe von
 \begin{equation}
@@ -64,8 +65,8 @@ Für den Anstiegs- und Abstiegsbereich wird ein linearer Fit der Form
 mithilfe der Methode der kleinsten Quadrate (\textit{scipy.optimize.curve\_fit}\cite{scipy}) durchgeführt.
 Aus der Ausgleichsrechnung folgen die Parameter
 \begin{align*}
-    a_\text{Anstieg} &= \qty{1.57(14)}{\frac{1}{\nano\second^2}},\qquad b_\text{Anstieg} = \qty{23.31(159)}{\nano\second}, \\
-    a_\text{Abfall} &= \qty{-170(25)}{\frac{1}{\nano\second^2}},\qquad b_\text{Abfall} = \qty{39.25(480)}{\nano\second} \,.
+    a_\text{Anstieg} &= \qty{1.57(14)}{\frac{1}{\nano\second^2}},\qquad b_\text{Anstieg} = \qty{23.31(159)}{\frac{1}{\nano\second}}, \\
+    a_\text{Abfall} &= \qty{-170(25)}{\frac{1}{\nano\second^2}},\qquad b_\text{Abfall} = \qty{39.25(480)}{\frac{1}{\nano\second}} \,.
 \end{align*}
 Aus den Schnittpunkten der Ausgleichsgeraden mit der halben Plateau-Höhe
 \begin{align*}
@@ -118,7 +119,7 @@ Ein linearer Fit der Form
 wird durchgeführt, wobei $ch$ die Kanäle ("`channel"') im Bereich $[0, 511]$ und $t$ die Impulsdauer beschreibt.
 Die Ausgleichsgerade mit den Parametern
 \begin{align*}
-    a_\text{Kalibration} = \qty{0.0440(00001)}{\frac{1}{\second}}, \qquad b_\text{Kalibration} = \qty{0.3125(00079)}{}
+    a_\text{Kalibration} = \qty{0.0440(00001)}{\second}, \qquad b_\text{Kalibration} = \qty{0.3125(00079)}{\second}
 \end{align*}
 und die Messwerte sind \autoref{fig:kalibration} abgebildet.
 \begin{figure}
@@ -138,17 +139,17 @@ Die eigentliche Messung der Lebensdauer der Myonen umfasst eine Messzeit von
 \begin{equation*}
     t_\text{mess} = \qty{158234}{\second} \,.
 \end{equation*}
-Die Gesamtanzahl der Start- $N_\text{Start}$ und Stopsignale $N_\text{Stop}$ beträgt
+Die Gesamtanzahl der Start- $N_\text{Start}$ und Stoppsignale $N_\text{Stop}$ beträgt
 \begin{align*}
     N_\text{Start} &= \qty{4509112(2123)}{}, \\
     N_\text{Stop} &= \qty{17526(132)}{} \,.
 \end{align*}
 Durch ein eintreffendes Myon wird das Startsignal ausgelöst.
-Zerfällt das Myon in der Suchzeit $T_S = \qty{10}{\micro\second}$ wird ein weiteres Signal, das Stopsignal detektiert.
+Zerfällt das Myon in der Suchzeit $T_S = \qty{10}{\micro\second}$ wird ein weiteres Signal, das Stoppsignal detektiert.
 Im Folgenden wird die Untergrundrate mit statistischen Methoden abgeschätzt.
 Die Ereignisrate beträgt im Durchschnitt etwa $n = \qty{28.5}{\frac{1}{\second}}$.
 Die Wahrscheinlichkeit, dass während der Suchzeit $T_S$ ein weiteres Myon in den Detektor trifft folgt einer Poisson-Verteilung.  
-Der Untergrund wird mittels \autoref{eqn:} auf %REF???
+Der Untergrund wird mittels \autoref{eqn:poisson_untergrund} auf
 \begin{equation}
     N_\text{Untergrund} = \qty{1283(1)}{}
     \label{eqn:untergrund}
@@ -175,17 +176,17 @@ Alle weiteren Kanäle weisen daher sehr geringe bis keine Ereignisse auf und dü
 Die betrachteten Kanäle werden analog in die entsprechenden Zerfallszeiten umgerechnet und anschließend der Fit durchgeführt.
 Dabei ergibt sich für die Lebensdauer $\tau = 1/\lambda$ und für den Untergrund $U_1$
 \begin{align}
-    \tau_2 &= \qty{2.11(5)}{\micro\second},\\
+    \tau_1 &= \qty{2.11(5)}{\micro\second},\\
     U_1 &= \qty{1.05(41)}{} \,.
 \end{align}
-Die Messwerte und exponentielle Ausgleichskurve sind in \autoref{fig:lebensdauer2} dargestellt.
+Die Messwerte und exponentielle Ausgleichskurve sind in \autoref{fig:lebensdauer1} dargestellt.
 \begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{content/plots/lifetime.pdf}
-    \caption{Die Anzahl detektierter Ereignisse $N$ die ein Start- und Stopsignal ausgelöst haben in Abhängigkeit der gemessenen Zerfallszeit $t$.
+    \caption{Die Anzahl detektierter Ereignisse $N$ die ein Start- und Stoppsignal ausgelöst haben in Abhängigkeit der gemessenen Zerfallszeit $t$.
     Die exponentielle Ausgleichskurve führt direkt zur Lebensdauer der kosmischen Myonen.
     }
-    \label{fig:lebensdauer2}
+    \label{fig:lebensdauer1}
 \end{figure}
 \\
 Zuletzt wird der in \autoref{sec:untergrund} statistisch abgeschätzte Untergrund zur Bestimmung der Lebensdauer der kosmischen Myonen verwendet.
@@ -199,7 +200,7 @@ Es wird angenommen, dass sich der Untergrund (\autoref{eqn:untergrund}) gleichm�
 Dabei werden weiter die Kanäle $[4,218]$ betrachtet.
 Der Untergrund pro Kanal ergibt sich dann zu
 \begin{equation}
-    U_2 = \qty{5.97(1)}{\frac{1}{ch}}
+    U_2 = \qty{5.97(1)}{}
 \end{equation}
 und wird von den gemessenen Ereignissen abgezogen.
 Dabei kommt es bei Kanälen mit bereits wenigen Ereignissen (ab $\sim \qty{7}{\micro\second}$) zu negativen Zählraten.
@@ -208,15 +209,15 @@ Um physikalisch sinnvolle Ergebnisse zu erhalten, werden bei der Ausgleichsrechn
 \\
 Aus einer Ausgleichsrechnung mit \autoref{eqn:exp2} folgt
 \begin{equation}
-    \tau = \qty{1.93(4)}{\micro\second}
+    \tau_2 = \qty{1.93(4)}{\micro\second}
 \end{equation}
 für die Lebensdauer der Myonen unter Beachtung des statistich abgeschätzten Untergrunds.
-Die korrigierten Ereigniszahlen $N$ für die Zerfallszeiten der Kanäle $[4,218]$, sowie die Ausfleichskurve sind in \autoref{fig:lebensdauer2} dargestellt.
+Die korrigierten Ereigniszahlen $N$ für die Zerfallszeiten der Kanäle $[4,218]$, sowie die Ausgleichskurve sind in \autoref{fig:lebensdauer2} dargestellt.
 Die für die Ausgleichsrechnung verwendeten Messwerte sind in gelb markiert.
 \begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{content/plots/lifetime2.pdf}
-    \caption{Die Anzahl detektierter Ereignisse $N$ die ein Start- und Stopsignal ausgelöst haben in Abhängigkeit der gemessenen Zerfallszeit $t$.
+    \caption{Die Anzahl detektierter Ereignisse $N$ die ein Start- und Stoppsignal ausgelöst haben in Abhängigkeit der gemessenen Zerfallszeit $t$.
     Die in gelb markierten Messwerte werden für die Ausgleichsrechnung verwendet.
     Die exponentielle Ausgleichskurve führt direkt zur Lebensdauer der kosmischen Myonen.
     }

@@ -9,23 +9,22 @@ Die Fermionen des Standardmodells sind in drei Generationen eingeteilt, wobei da
 Es ähnelt dabei stark dem Elektron aus der 1. Generation. 
 So besitzen beide Teilchen einen Spin $S = \frac{1}{2}$ und eine Ladung von $q = -e$.
 Das Myon ist mit einer Masse von $m = \qty{105.658}{\MeV}$ über 200 mal schwerer als das Elektron.
-
-Die Myonen die auf der Erdoberfläche ankommen stammen aus Wechselwirkungen der primären Kosmischen Strahlung mit der Atmosphäre.
+\\
+Die Myonen die auf der Erdoberfläche ankommen stammen aus Wechselwirkungen der primären kosmischen Strahlung mit der Atmosphäre.
 Dort entstehen größtenteils geladene Pionen, die wiederum wie folgt zerfallen:
 \begin{align*}
     \pi^- &\rightarrow \mu^- + \bar{\nu}_{\mu} & \pi^+ &\rightarrow \mu^+ + \nu_{\mu}
 \end{align*}
-Die entstandenen Myonen haben eine durchschnittliche Lebensdauer von $\tau = \qty{2.197}{\micro\second}$.
+Die entstandenen Myonen haben eine durchschnittliche Lebensdauer von $\tau = \qty{2.197}{\micro\second}$\cite{pdg}.
 Myonen zerfallen über:
 \begin{align*}
     \mu^- &\rightarrow \symup{e}^- + \bar{\nu}_\text{e} + \nu_{\mu} & \mu^+ &\rightarrow \symup{e}^+ + \nu_{\text{e}} + \bar{\nu}_{\mu}
 \end{align*}
 \subsection{Lebensdauer}
 \label{ssec:lebensdauer}
-
 Alle instabilen Teilchen besitzen notwendigerweise eine mittlere Lebensdauer.
 Nach dieser Zeit zerfallen sie in andere Teilchen.
-Allgemein ist die Wahrscheinlichkeit, dass ein Teilchen in einer Zeit $\text{d}t$ zerfällt 
+Allgemein ist die Wahrscheinlichkeit, dass ein Teilchen in der Zeit $\text{d}t$ zerfällt 
 \begin{equation}
     \text{d}W = \lambda \text{d}t.
 \end{equation}
@@ -37,17 +36,18 @@ Die Änderung der Teilchenzahl in der Zeit $\text{d}t$ ist dann definiert als
 \end{equation}
 Diese Differentialgleichung kann mit dem Ansatz 
 \begin{equation}
-    N(t) = N_0 \exp{- \lambda t}
+    N(t) = N_0 \exp(- \lambda t)
 \end{equation}
 gelöst werden.
 Damit erhalten wir das Zerfallsgesetz, welches zu jedem Zeitpunkt $t$ angibt, wie viele Teilchen von den ursprünglich $N_0$ noch nicht zerfallen sind.
-Aus der Zerfallskonstante kann dann die mittlere Lebensdauer $\tau = \frac{1}{\lambda}$ bestimmt werden.
+Aus der Zerfallskonstante kann die mittlere Lebensdauer $\tau = \frac{1}{\lambda}$ bestimmt werden.
 
 \subsection{Untergrund}
 \label{ssec:untergrund}
 
-Der Versuch basiert darauf, dass Myonen und ihre Zerfallsteilchen die Elektronen den Szintillator auslösen und so letztenendes ein Signal erzeugt wird.
-Zwischen Myon und Elektron kann dabei nicht unterschieden werden, es ist also möglich, dass ein zweites Myon den Szintillator auslöst und später als ein Elektron gewertet wird.
+Der Versuch basiert darauf, dass Myonen und ihre Zerfallsteilchen die Elektronen ein Signal im Szintillator auslösen.
+Zwischen Myon und Elektron kann dabei nicht unterschieden werden.
+Es ist also möglich, dass ein zweites Myon ein Signal auslöst und später als ein Elektron gewertet wird.
 Um diesen Untergrund in der Messung zu verhindern werden einige Vorüberlegungen getroffen.
 Die Anzahl gemessener Myonen $n$ folgt einer Poissonverteilung
 \begin{equation}
@@ -58,12 +58,13 @@ wobei
     \lambda = \frac{N_\text{starts}}{t_\text{ges}} \cdot T_\text{s}
 \end{equation}
 der Erwartungswert der Verteilung ist.
-Hierbei ist $N_\text{starts}$ die Anzahl der detektierten Startimpulse, also aller Myonen und $t_\text{ges}$ die gesamte Messzeit des Experiments.
+Hierbei ist $N_\text{starts}$ die Anzahl der detektierten Startimpulse, also aller gemessenen Myonen in der Messzeit $t_\text{ges}$.
 Die Suchzeit $T_\text{s}$ ist die Zeitspanne in der auf ein Elektronsignal gewartet wird, nachdem ein Startimpuls gemessen wurde.
-Man kann sich nun überlegen, dass der Untergrund sich über 
+Der Untergrund kann über 
 \begin{equation}
     U = N_\text{starts} \cdot p_\lambda (1)
+    \label{eqn:poisson_untergrund}
 \end{equation}
-annähern lässt.
+abgeschätzt werden.
 Mit $p_\lambda (1)$ erhält man die Wahrscheinlichkeit dafür, dass genau ein Myon während der Suchzeit in den Szintillator trifft und die Messung verfälscht.
 Jedes weitere Myon würde wieder ein Startsignal auslösen.
