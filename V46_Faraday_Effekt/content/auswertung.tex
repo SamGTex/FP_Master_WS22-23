@@ -3,6 +3,7 @@
 
 % ext. Magnetfeld
 \subsection{Maximale Feldstärke des externen Magnetfelds}
+\label{sec:magnetfeld}
 Zur Bestimmung des Magnetfelds am Ort der Probe wird die mit einer Hallsonde gemessene Feldstärke $B(x)$ in Abhängigkeit des Ortes $x$ in \autoref{tab:magnetfeld} betrachtet.
 Die $x$-Achse liegt dabei parallel zum einfallenden Lichtstrahl.
 
@@ -70,7 +71,19 @@ bestimmt.
 
 % Bestimmung der effektiven Masse
 \subsection{Effektive Masse der Leitungselektronen}
-
+In diesem Abschnitt wird mittels gemessener Faraday-Rotation die effektive Masse der Leitungselektronen zweier n-dotierten Galliumarsenid-Proben bestimmt.
+\autoref{tab:rein} beinhaltet die Messwerte der hochreinen Galliumarsenid-Probe und \autoref{tab:N1} der n-dotierten Galliumarsenid-Probe mit Ladungsträgerkonzentration $N_1 = \qty{1.2e18}{\centi\metre^2}$ bzw. \autoref{tab:N2} mit $N_2 = \qty{2.8e18}{\centi\metre^2}$.
+Aus dem gemessenen Winkel $\theta_1$ bei angelegtem Magnetfeld $B_\text{max}$ und $\theta_2$ bei umgepolten Magnetfeld $-B_\text{max}$ ergibt sich der Rotationswinkel der Polarisationsebene nach
+\begin{equation*}
+    \theta = \frac{\theta_1 - \theta_2}{2} \, .
+\end{equation*}
+Die Rotationswinkel werden auf die Dicke $d$ der jeweiligen Probe normiert, dabei gilt für die Probendicke:
+\begin{align}
+    d_\text{rein} &= \qty{5.11}{\milli\metre} \\
+    d_{N_1} &= \qty{1.36}{\milli\metre} \\
+    d_{N_2} &= \qty{1.296}{\milli\metre}
+\end{align}
+Die berechneten Rotationswinkel $\theta$ bzw. normierten Rotationswinkel $\theta / d$ sind in den genannten Tabellen jeweils für die drei Proben zu finden.
 %rein
 \begin{table}
     \centering
@@ -78,7 +91,7 @@ bestimmt.
     \label{tab:rein}
     \begin{tabular}{r r r r r}
         \toprule
-        $\lambda \,/\, \unit{\milli\metre}$ & $\theta_1 \,/\, \unit{\degree}$ & $\theta_2 \,/\, \unit{\degree}$ & $\theta \,/\, \unit{rad}$ & $\frac{\theta}{d} \,/\, \frac{rad}{\unit{\metre}}$ \\
+        $\lambda \,/\, \unit{\micro\metre}$ & $\theta_1 \,/\, \unit{\degree}$ & $\theta_2 \,/\, \unit{\degree}$ & $\theta \,/\, \unit{rad}$ & $\frac{\theta}{d} \,/\, \frac{rad}{\unit{\metre}}$ \\
         \midrule
         1.060 & 89.08 & 65.50 & 0.206 & 40.275 \\
         1.290 & 81.03 & 66.67 & 0.125 & 24.535 \\
@@ -100,7 +113,7 @@ bestimmt.
     \label{tab:N1}
     \begin{tabular}{r r r r r}
         \toprule
-        $\lambda \,/\, \unit{\milli\metre}$ & $\theta_1 \,/\, \unit{\degree}$ & $\theta_2 \,/\, \unit{\degree}$ & $\theta \,/\, \unit{rad}$ & $\frac{\theta}{d} \,/\, \frac{rad}{\unit{\metre}}$ \\
+        $\lambda \,/\, \unit{\micro\metre}$ & $\theta_1 \,/\, \unit{\degree}$ & $\theta_2 \,/\, \unit{\degree}$ & $\theta \,/\, \unit{rad}$ & $\frac{\theta}{d} \,/\, \frac{rad}{\unit{\metre}}$ \\
         \midrule
         1.060 & 78.07 & 67.42 & 0.093 & 68.337 \\
         1.290 & 72.05 & 65.33 & 0.059 & 43.099 \\
@@ -122,7 +135,7 @@ bestimmt.
     \label{tab:N2}
     \begin{tabular}{r r r r r}
         \toprule
-        $\lambda \,/\, \unit{\milli\metre}$ & $\theta_1 \,/\, \unit{\degree}$ & $\theta_2 \,/\, \unit{\degree}$ & $\theta \,/\, \unit{rad}$ & $\frac{\theta}{d} \,/\, \frac{rad}{\unit{\metre}}$ \\
+        $\lambda \,/\, \unit{\micro\metre}$ & $\theta_1 \,/\, \unit{\degree}$ & $\theta_2 \,/\, \unit{\degree}$ & $\theta \,/\, \unit{rad}$ & $\frac{\theta}{d} \,/\, \frac{rad}{\unit{\metre}}$ \\
         \midrule
         1.060 & 78.83 & 65.33 & 0.118 & 90.903 \\
         1.290 & 72.83 & 61.25 & 0.101 & 77.997 \\
@@ -136,20 +149,46 @@ bestimmt.
         \bottomrule
     \end{tabular}
 \end{table}
-
-
+In \autoref{fig:theta_lam2} sind die normierten Rotationswinkel $\theta / d$ gegen das Quadrat der Wellenlänge $\lambda^2$ für die hochreine und beide n-dotierten Galliumarsenid-Proben aufgetragen.
 \begin{figure}
     \centering
-    \includegraphics[width=0.7\textwidth]{figure/theta_lam2.pdf}
+    \includegraphics[width=0.8\textwidth]{figure/theta_lam2.pdf}
     \caption{Normierte Faraday-Rotation $\frac{\theta}{d}$ in Abhängigkeit der Wellenlänge zum Quadrat $\lambda^2$ für die hochreine und n-dotierten Galliumarsenid-Proben.}
     \label{fig:theta_lam2}
 \end{figure}
-
+Zur Bestimmung der effektiven Masse der Leitungselektronen darf nur die von diesen Elektronen verursachte Faraday-Rotation ausgewertet werden.
+Dazu wird die Differenz von $\theta / d$ der n-dotierten Proben mit der hochreinen Probe gebildet.
+Die resultierenden Winkel sind in Abhängigkeit von $\lambda^2$ in \autoref{fig:theta_dif_lam2} dargestellt.
 \begin{figure}
     \centering
-    \includegraphics[width=0.7\textwidth]{figure/theta_lam2_dif.pdf}
+    \includegraphics[width=0.8\textwidth]{figure/theta_lam2_dif.pdf}
     \caption{Differenz der normierten Faraday-Rotation der n-dotierten Proben mit der reinen Probe $\frac{\theta}{d}$ in Abhängigkeit der Wellenlänge zum Quadrat $\lambda^2$.
     Die Ausgleichsrechnung folgt der Funktion $\frac{\theta}{d} = a\cdot \lambda^2$.
     }
     \label{fig:theta_dif_lam2}
 \end{figure}
+Eine Ausgleichsrechnung der Form
+\begin{equation}
+    \frac{\theta}{d} = a \cdot \lambda^2
+    \label{eqn:fit_lam2}
+\end{equation}
+wird mit den Wertepaaren $(\lambda^2, \theta / d)$ für die beiden n-dotierten Proben durchgeführt.
+Der Parameter $a$ ergibt sich für die n-dotierte Probe mit Ladungsträgerkonzentration $N_1$ bzw. $N_2$ zu
+\begin{align*}
+    a_{N_1} &= \qty{5.1(11)e+12}{\frac{rad}{\metre^3}}, \\
+    a_{N_2} &= \qty{1.35(14)e+13}{\frac{rad}{\metre^3}} \, . \\
+\end{align*}
+Die Ausgleichskurve ist für beide n-dotierten Proben in \autoref{fig:theta_dif_lam2} abgebildet.
+Vergleicht man die Ausgleichsfunktion \autoref{eqn:fit_lam2} mit \autoref{eqn:THEORIE} und identifiziert den Fit-Parameter $a$, so folgt für die effektive Masse $m^*$%REF
+\begin{align}
+    a &= \frac{e_0^3}{8 \pi^2 \epsilon_0 c^3} \frac{1}{{m^*}^2} \frac{N B_\text{max}}{n} \\
+    \Rightarrow m^* &= \sqrt{\frac{e_0^3}{8 \pi^2 \epsilon_0 c^3} \frac{1}{a} \frac{N B_\text{max}}{n}} \, .
+\end{align}
+Der Brechungsindex für Galliumarsenid $n = 3.346$ wird der Literatur \cite{GaAs_n} entnommen.
+Die effektive Masse der Leitungselektronen wird somit auf
+\begin{align*}
+    m^*_{N_1} &= \qty{7.9(9)e-32}{\kilo\gram} &= \qty{0.086(9)}{m_e} \\
+    m^*_{N_2} &= \qty{7.3(4)e-32}{\kilo\gram} &= \qty{0.081(4)}{m_e}
+\end{align*}
+bestimmt.
+\FloatBarrier
