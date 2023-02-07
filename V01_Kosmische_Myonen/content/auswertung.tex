@@ -62,8 +62,8 @@ Für den Anstiegs- und Abstiegsbereich wird ein linearer Fit der Form
 mithilfe der Methode der kleinsten Quadrate (\textit{scipy.optimize.curve\_fit}\cite{scipy}) durchgeführt.
 Aus der Ausgleichsrechnung folgen die Parameter
 \begin{align*}
-    a_\text{Anstieg} &= \qty{1.57(14)}{\frac{1}{\nano\second^2}},\qquad b_\text{Anstieg} = \qty{23.31(159)}{\frac{1}{\nano\second}}, \\
-    a_\text{Abfall} &= \qty{-170(25)}{\frac{1}{\nano\second^2}},\qquad b_\text{Abfall} = \qty{39.25(480)}{\frac{1}{\nano\second}} \,.
+    a_\text{Anstieg} &= \qty{1.57(14)e9}{\frac{1}{\second^2}},\qquad b_\text{Anstieg} = \qty{23.31(159)}{\frac{1}{\second}}, \\
+    a_\text{Abfall} &= \qty{-170(25)e9}{\frac{1}{\second^2}},\qquad b_\text{Abfall} = \qty{39.25(480)}{\frac{1}{\second}} \,.
 \end{align*}
 Aus den Schnittpunkten der Ausgleichsgeraden mit der halben Plateau-Höhe
 \begin{align*}
@@ -123,7 +123,7 @@ und die Messwerte sind \autoref{fig:kalibration} abgebildet.
     \centering
     \includegraphics[width=0.9\textwidth]{content/plots/calibration.pdf}
     \caption{Die ermittelten Kanäle des Vielkanalanalysators in Abhängigkeit der eingestellten Impulsdauer.
-    Ein linearer Fit verdeutlicht die starke lineare Korrelation zwischen den Variablen.
+    Ein linearer Fit verdeutlicht die lineare Korrelation zwischen den Variablen.
     }
     \label{fig:kalibration}
 \end{figure}
@@ -138,14 +138,14 @@ Die eigentliche Messung der Lebensdauer der Myonen umfasst eine Messzeit von
 \end{equation*}
 Die Gesamtanzahl der Start- $N_\text{Start}$ und Stoppsignale $N_\text{Stop}$ beträgt
 \begin{align*}
-    N_\text{Start} &= \qty{4509112(2123)}{}, \\
-    N_\text{Stop} &= \qty{17526(132)}{} \,.
+    N_\text{Start} &= \qty{4509112}{}, \\
+    N_\text{Stop} &= \qty{17526}{} \,.
 \end{align*}
 Durch ein eintreffendes Myon wird das Startsignal ausgelöst.
-Zerfällt das Myon in der Suchzeit $T_S = \qty{10}{\micro\second}$ wird ein weiteres Signal, das Stoppsignal detektiert.
+Zerfällt das Myon in der Suchzeit $T_\text{S} = \qty{10}{\micro\second}$ wird ein weiteres Signal, das Stoppsignal detektiert.
 Im Folgenden wird die Untergrundrate mit statistischen Methoden abgeschätzt.
 Die Ereignisrate beträgt im Durchschnitt etwa $n = \qty{28.5}{\frac{1}{\second}}$.
-Die Wahrscheinlichkeit, dass während der Suchzeit $T_S$ ein weiteres Myon in den Detektor trifft folgt einer Poisson-Verteilung.  
+Die Wahrscheinlichkeit, dass während der Suchzeit $T_\text{S}$ ein weiteres Myon in den Detektor trifft folgt einer Poisson-Verteilung.  
 Der Untergrund wird mittels \autoref{eqn:poisson_untergrund} auf
 \begin{equation}
     N_\text{Untergrund} = \qty{1283(1)}{}
@@ -164,8 +164,7 @@ Es wird eine Ausgleichsrechnung mit der Funktion
 \end{equation}
 durchgeführt.
 Dabei werden die Kanäle im Bereich $[4, 218]$ beachtet.
-Die ersten 4 Kanäle weisen eine sehr geringe Ereignisrate auf und sind auf technische Ursachen zurückzuführen.
-Im Anfangsbereich werden hohe Ereignisraten erwartet.
+Die ersten 4 Kanäle weisen eine sehr geringe Ereignisrate auf, obwohl im Anfangsbereich hohe Ereignisraten erwartet werden.
 Setzt man den Kanal $218$ in \autoref{eqn:fit_kanal} ein, so erhält man eine Zerfallszeit von $\sim \qty{10}{\micro\second}$.
 Dies entspricht der Suchzeit $T_S$.
 Alle weiteren Kanäle weisen daher sehr geringe bis keine Ereignisse auf und dürfen nicht in der Ausgleichsrechnung berücksichtigt werden.

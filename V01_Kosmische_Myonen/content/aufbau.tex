@@ -1,8 +1,8 @@
 \section{Aufbau}
 \label{sec:aufbau}
 
-Der Aufbau dieses Versuchs wird im nachfolgenden Abschnitt genauer erklärt, da dessen Funktionsweise für die korrekte Durchführung notwendig ist.
-Das komplette Schaltbild ist in \autoref{fig:szintillator} dargestellt.
+Der Aufbau dieses Versuchs wird im nachfolgenden Abschnitt genauer erklärt.
+Das Schaltbild ist in \autoref{fig:szintillator} dargestellt.
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{content/images/szintillator.png}
@@ -11,25 +11,25 @@ Das komplette Schaltbild ist in \autoref{fig:szintillator} dargestellt.
 \end{figure}
 Die eigentliche Detektion der Myonen findet mit einem Szintillator statt.
 Das Szintillatormaterial wird aufgrund der eintreffenden geladenen Teilchen ionisiert und Photonen anschließend emittiert.
-Die angeschlossenen Photomultiplier (PMT) werden über einen Hochfrequenzgenerator betrieben und verstärken die eintreffenden Photonen zu einem elektrischen Signal.
+Die angeschlossenen Photomultiplier (PMT) werden über einen Hochspannungsquelle betrieben und verstärken die eintreffenden Photonen zu einem elektrischen Signal.
 \\
 Das entstandene Signal wird beidseitig aus dem Szintillator jeweils in eine Verzögerungsleitung geschickt.
 Eine Verzögerungsleitung besitzt eine variable Leitungslänge, womit das elektrische Signal zeitlich verzögert werden kann.
 Anschließend gelangen die Signale in einen Diskriminator.
-Sollte das Signal eine festgelegte Signalstärke übersteigen, wird es in ein Rechtecksignal umgewandelt, dessen Signallänge eingestellt werden kann.
+Sollte das Signal eine festgelegte Signalstärke übersteigen, wird es in einen konstanten Impuls umgewandelt, dessen Signallänge einstellbar ist.
 Die Nutzung von zwei Diskriminatoren verhindert, dass spontan ausgelöste Signale der Photomultiplier als Myon gezählt werden.
-Wird im Szintillator also ein Myon detektiert, sollten zwei Signale aus den beiden Diskriminatoren an die Koinzidenz übermittelt werden.
+Wird im Szintillator ein Myon detektiert, sollten zwei Signale aus den beiden Diskriminatoren an die Koinzidenz übermittelt werden.
 Nur wenn innerhalb einer eingestellten Koinzidenzzeit zwei Signale die Koinzidenz erreichen, gibt sie ein Signal in den zweiten Teil der Schaltung weiter.
 \\
-Das Signal aus der Koinzidenz wird hier aufgeteilt.
-Einerseits gelangt das Signal zu einem AND-Gatter, das als Startpunkt der Zerfallszeit dient.
+Das Signal aus der Koinzidenz wird aufgeteilt.
+Einerseits gelangt das Signal zu einem AND-Gatter, das als Startpunkt der Messung dient.
 Ein AND-Gatter benötigt jedoch zwei aktivierte Eingänge um ein Signal weiterzugeben.
-Der zweite Eingang ist mit einem Monoflop verbunden, welcher in seinem Grundzustand über normale Ausgänge kein Signal ausgibt und über invertierte Ausänge ein Signal.
+Der zweite Eingang ist mit einem Monoflop verbunden, welcher in seinem Grundzustand über normale Ausgänge ein invertiertes Signal ausgibt und über invertierte Ausänge ein Signal.
 Das Start AND-Gatter ist mit einem invertierten Ausgang verbunden.
 Es wird also aktiviert, sobald ein Signal der Koinzidenz es erreicht.
-Dadurch wird ein Impulszähler aktiviert, welcher die Anzahl aller Start-Impule zählt.
-Außerdem wird der Start-Eingang des TAC (\textit{Time amplitude converter}) aktiviert.
-Dieser misst die Zeitdifferenz zwischen Start- und Stoppsignal und wandelt diese in eine Amplitude um.
+Das Signal erreicht einen Impulszähler, welcher die Anzahl aller Start-Impulse zählt.
+Außerdem erreicht es den Start-Eingang des TAC (\textit{Time amplitude converter}).
+Dieser misst die Zeit zwischen Start- und Stoppsignal und wandelt diese in eine Amplitude um.
 \\
 Das ursprüngliche Signal aus der Koinzidenz wird außerdem über eine Verzögerungsleitung um etwa $\Delta t = \qty{30}{\nano\second}$ verzögert und dann an den Monoflop übertragen.
 Daraufhin begibt sich der Monoflop in einen angeregten Zustand. 
@@ -43,4 +43,3 @@ Dort sind nun beide Eingänge aktiviert und analog zum Start AND-Gatter wird der
 Dieser beendet seine Messung und übergibt die Amplitude an den Vielkanalanalysator.
 Sollte innerhalb der Suchzeit kein weiteres Signal eintreffen, begibt sich der Monoflop wieder in den Grundzustand und eine neue Startmessung kann beginnen.
 Der Vielkanalanalysator erhält alle im Experiment gemessenen Zerfallszeiten und ordnet sie den entsprechenden Kanälen zu.
-Die Anzahl der Zerfallszeiten wird gemessen und sollte einer Exponentialverteilung folgen, die dem Zerfallsgesetz entspricht.
