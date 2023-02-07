@@ -1,0 +1,7 @@
+- Linearer Fit durchgeführt, da linearer Zusammenhang erwartet wird. Was unweigerlich zu nicht eindeutigen Aufteilung der Bereiche führte, da kein wirkliches Plateau vorhanden.
+    Sollen wir stattdessen eine Ausgleichsrechnung mit Gauß bzw. einer quadratischen Funktion durchführen und darüber die Halbwertsbreite bestimmen oder den Bereich verändern?
+
+- Fitparameter in Nanosekunden, statt Sekunden. Absichtlich gewählt da Größenordnung passt und die Zeiten in Nanosekunden gemessen wurden.
+    Soll das generell in SI-Einheiten angegeben werden?
+
+- 
