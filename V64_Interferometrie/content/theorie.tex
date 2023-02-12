@@ -33,10 +33,96 @@ Zum anderen interferieren zwei senkrecht zueinander linear polarsierte Lichtstra
 
 %Kontrast
 \subsection{Kontrast eines Interferometers}
+Der Kontrast oder auch Sichtbarkeit ist ein Maß für den Intensitätsunterschied zwischen zwei abgebildeten Punkten.
+Im Bezug auf ein Interferometer ist der Kontrast als
+\begin{equation}
+    \nu = \frac{I_\text{max}-I_\text{min}}{I_\text{max}+I_\text{min}}
+    \label{eq:kontrast1}
+\end{equation}
+definiert.
+Dabei beschreibt $I_\text{max}$ die maximale und $I_\text{min}$ die minimale Intensität eines Interferenzmusters.
+Liegt das Intensitätsminimum bei Null, so nimmt der Kontrast den maximal möglichen Wert $\nu=1$ an.
+Der kleinst mögliche Wert des Kontrasts $\nu=0$ wird für $I_\text{max}=I_\text{min}$ erreicht.
+\\
+\\
+Die Intensität der resultierenden Welle bei einer Überlagerung zweier Wellen mit Amplitude $E_1$ bzw. $E_2$ ist durch
+\begin{equation*}
+    I \propto \, <|E_1 \cos(\omega t) + E_2 \cos(\omega t + \delta)|^2>
+\end{equation*}
+mit der Kreisfrequenz der Welle $\omega$ und Phasenverschiebung $\delta$ gegeben.
+Die mittlere Intensität eines Lichtstrahls wird über die zeitliche Mittelung $<f(t)> = \frac{1}{T} \int_{t_0}^{t_0 + T} f(t) \mathrm{d}t$ bestimmt.
+Beide interferierende Strahlen sind Teilstrahlen des vom Laser ausgesendeten Strahls mit Amplitude $E_0$.
+Abhängig von der Einstellung des Polarisationswinkels $\phi$ wird die Amplitude nach
+\begin{equation*}
+    E_1 = E_0 \cdot \cos(\phi), \qquad E_2 = E_0 \cdot \sin(\phi)
+\end{equation*}
+aufgeteilt.
+Nach einsetzen in die Itensität
+\begin{equation*}
+    I \propto \, <|E_0 \cos(\phi) \cos(\omega t) + E_0 \sin(\phi)\cos(\omega t + \delta)|^2>
+\end{equation*}
+und auflösen des Quadrats kann jeweils das zeitliche Mittel der drei resultierenden Terme bestimmt werden.
+Mittels Additionstheorem kann die Intensität auf
+\begin{equation*}
+    I \propto \, \frac{1}{2} E_0^2 ( 1 + 2 \sin(\phi) \cos(\phi) \cos(\delta) ) 
+\end{equation*}
+reduziert werden.
+Die maximale bzw. minimale Intensität
+\begin{equation*}
+    I_\text{max/min} = I_\text{ges} (1 \pm 2 \sin(\phi) \cos(\phi))
+\end{equation*}
+folgt für die Phasenverschiebung $\delta_\text{max} = 2\pi N$ bzw. $\delta_\text{min} = 2\pi (N+1)$, wobei $N \in \mathbf{N_0}$.
+\\
+Eingesetzt in \autoref{eq:kontrast1} kann der Kontrast
+\begin{equation}
+    \nu (\phi) = 2 \sin(\phi) \cos(\phi)
+    \label{eq:kontrast2}
+\end{equation}
+in Abhängigkeit der Einstellung des Polarisationsfilters (Polarisationswinkel $\phi$) ausgedrückt werden.
 
 %n Glas
 \subsection{Brechungsindex von Glas}
-
+In diesem Versuch soll mithilfe des Interferometers Brechungsindizes verschiedener Materialien ermittelt werden.
+Die Lichtgeschwindigkeit im Medium $c_\text{m}$ ist über den materialabhängigen Brechungsindex $n$ durch $c_\text{m} = \frac{c}{n}$ definiert.
+Ein Lichtstrahl der durch das Medium geleitet wird, benötigt für den gleichen Weg den ein Lichtstrahl im Vakuum zurücklegt mehr Zeit ($n>1$).
+Zwischen dem Lichtstrahl im Medium und im Vakuum existiert eine Phasenverschiebung $\delta$.
+\\
+Das in diesem Versuch untersuchte Glas befindet sich in einem Doppelglashalter.
+Beide Teilstrahlen verlaufen jeweils durch eine Glasplatte, die in einem Winkel von $\theta_0 = \pm \qty{10}{\degree}$ zueinander verkippt sind.
+Abhängig vom Winkel des Doppelglashalters $\theta$ durchlaufen die Strahlen unterschiedliche Streckenlängen im Glas.
+Die Phasenverschiebung für das Doppelglas ist für kleine Drehwinkel $\theta$ gegeben durch
+\begin{equation*}
+    \Delta \delta (\theta) = \frac{2\pi}{\lambda_\text{vac}} T \frac{n-1}{2n} \left \{ (\theta+\theta_0)^2 - (\theta-\theta_0)^2 \right \} \, ,
+\end{equation*}
+wobei $\lambda_\text{vac}$ die Vakuumwellenlänge des vom Laser ausgesandten Strahls und $T$ die Dicke der Glasplatte angibt.
+Die Phasenverschiebung zwischen zwei interferierenden Wellen ist unmittelbar mit der Anzahl der Interferenzmaxima bzw. -minima über $M = \frac{\Delta \delta}{2\pi}$ verknüpft.
+Weiter folgt für den Brechungsindex von dem Doppelglas
+\begin{equation}
+    n = \frac{1}{1- \frac{M \lambda_\text{vac}}{2 T \theta \theta_0}} \, .
+    \label{eq:n_glas}
+\end{equation}
 
 %n Luft
 \subsection{Brechungsindex von Luft}
+Ein Lichtstrahl der eine evakuierte Gaszelle mit Länge $L$ durchläuft erfährt eine Phasenverschiebung
+\begin{equation*}
+    \Delta \delta =  \frac{2 \pi L}{\lambda_\text{vac}} (n-1)
+\end{equation*}
+gegenüber einem Lichtstrahl in Medium Luft mit Brechungsindex $n$.
+Die Phasenverschiebung wird erneut durch die Anzahl der Interferenzmaxima bzw. -minima ausgedrückt und es folgt für den Brechungsindex von Luft
+\begin{equation}
+    n = \frac{M \lambda_\text{vac}}{L} + 1 \, .
+    \label{eq:n_luft}
+\end{equation}
+Das Lorentz-Lorenz-Gesetz setzt den Brechungsindex mit der Polarisierbarkeit des Mediums in Beziehung.
+Für den Brechungsindex von Gas gilt
+\begin{equation*}
+    \frac{n^2-1}{n^2+1} = \frac{A p}{R T}
+\end{equation*}
+mit Temperatur $T$ und Druck $p$ des Gases, der allgemeinen Gaskonstante $R$ und Molrefraction $A$.
+Näherungsweise für Gase mit $n \approx 1$ (Taylorentwicklung 1. Ordnung um $n=1$) kann der Brechungsindex über
+\begin{equation}
+    n \approx \frac{3}{2} \frac{A p}{R T}
+    \label{eq:n_luft_lorentz}
+\end{equation}
+bestimmt werden.
