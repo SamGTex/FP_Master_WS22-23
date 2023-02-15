@@ -2,7 +2,10 @@
 \label{sec:Auswertung}
 
 %Siehe \autoref{fig:plot}!
+\subsection{Kontrast}
 
+Zur Bestimmung des maximalen Kontrasts wurde der Winkel es Polaristionsfilters $\phi$ variiert und die jeweilige maximale und minimale Spannung in \autoref{tab:kontrast} notiert.
+Daraus lässt sich über \autoref{eq:kontrast1} der Kontrast für jede Winkeleinstellung berechnen. 
 \begin{table}
     \centering
     \caption{Winkeleinstellung des Polaristionsfilters $\phi$ und die entsprechenden maximalen und minimalen Spannungen an der Photodiode. Der daraus berechnete Kontrast $K$ ist ebenafalls aufgetragen.}
@@ -33,8 +36,58 @@
         \bottomrule
     \end{tabular}
 \end{table}
+Durch die Messwerte wird ein Fit der Form 
+\begin{equation*}
+    K(\phi) = A \cdot |\sin{\phi}\cos{\phi}|
+\end{equation*}
+gelegt.
+Dabei ist $A$ der zu bestimmende Parameter.
+Mit den Messwerten ergibt sich 
+\begin{equation*}
+    A = \qty{1.823(501)}{}
+\end{equation*}
+und der entsprechende Fit ist in \autoref{fig:kontrast} abgebildet.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{python/kontrast.png}
+    \caption{Fit der berechneten Kontraste in Abhängigkeit des Polaristionsfilter-Winkels.}
+    \label{fig:kontrast}
+\end{figure}
 
+\subsection{Brechungsindex von Glas}
+Die Anzahl der gemessenen Maxima $M$ bei Drehwinkel $\theta$ wurde insgesamt zehn mal durchgeführt.
+Für jedes $M$ wird über \autoref{eq:n_glas} der Brechungsindex $n_\text{Luft}$ berechnet.
+Das Ergebnis dieser Messreihen ist in \autoref{tab:glas} dargestellt.
+\begin{table}
+    \centering
+    \caption{Anzahl gemessener Maxima $M$ und der daraus berechnete Brechungsindex $n_\text{Luft}$.}
+    \label{tab:glas}
+    \begin{tabular}{c c}
+        \toprule
+        $M$ & $n_\text{Luft}$ \\
+        \midrule
+        $32 \pm 1 $ & $1.498 \pm 0.023 $ \\
+        $35 \pm 1 $ & $1.571 \pm 0.026 $ \\
+        $33 \pm 1 $ & $1.522 \pm 0.024 $ \\
+        $37 \pm 1 $ & $1.625 \pm 0.027 $ \\
+        $32 \pm 1 $ & $1.498 \pm 0.023 $ \\
+        $38 \pm 1 $ & $1.652 \pm 0.028 $ \\
+        $29 \pm 1 $ & $1.431 \pm 0.021 $ \\
+        $36 \pm 1 $ & $1.598 \pm 0.027 $ \\
+        $34 \pm 1 $ & $1.546 \pm 0.025 $ \\
+        $34 \pm 1 $ & $1.546 \pm 0.025 $ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+Über die so berechneten Brechungsindices wird gemittelt und somit ergibt sich als Endergebnis für den Brechungsindex von Luft
+\begin{equation*}
+    n_\text{Luft} = \qty{1.549(8)}{}.
+\end{equation*}
 
+\subsection{Brechungsindex von Luft}
+Für jeden Druck $p$ wurden in je drei Messreihen die Anzahl Maxima $M$ bestimmt.
+Außerdem wurde wie im vorherigen Abschnitt für jeden Messwert der Brechungsindex berechnet, dieses mal über \autoref{eq:n_luft}.
+Das Ergebnis ist in \autoref{tab:brechung} niedergeschrieben.
 
 \begin{table}
     \centering
@@ -67,3 +120,9 @@
         \bottomrule
     \end{tabular}
 \end{table}
+Für jeden der drei Messreihen wird entsprechend \autoref{eq:n_luft_lorentz} ein Fit der Form
+\begin{equation*}
+    n(p) = a \cdot \frac{p}{T R} + b 
+\end{equation*}
+durchgeführt.
+Dabei ist $T = \qty{293.05}{\kelvin}$ die entsprechende Raumtemperatur und $R$ die allgemeine Gaskonstante.
