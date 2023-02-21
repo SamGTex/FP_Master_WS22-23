@@ -84,10 +84,10 @@ Der Vielkanalanalysator ordnet ein Ereignis einem Kanal zu.
 Jeder Kanal deckt ein definiertes Zeitintervall ab.
 Die mittlere Zeit jedes Kanals wird mithilfe eines Impulsgenerators bestimmt.
 \\
-Die ermittelten Kanäle für bestimmte eingestellte Impulsdauern am Generator sind in \autoref{tab:kalibration} gelistet.
+Die ermittelten Kanäle für die eingestellten Zeitabstände zwischen zwei Impulsen sind in \autoref{tab:kalibration} gelistet.
 \begin{table}
     \centering
-    \caption{Die ermittelten Kanäle am Vielkanalanalysator in Abhängigkeit der eingestellten Impulsdauer am Impulsgenerator.}
+    \caption{Die ermittelten Kanäle am Vielkanalanalysator in Abhängigkeit des eingestellten Impulsabstands am Impulsgenerator.}
     \label{tab:kalibration}
     \begin{tabular}{cc}
         \toprule
@@ -107,13 +107,13 @@ Die ermittelten Kanäle für bestimmte eingestellte Impulsdauern am Generator si
         \bottomrule
     \end{tabular}
 \end{table}
-Die Kanäle sind mit der Impulsdauer linear korreliert.
+Die Kanäle sind mit dem Impulsabstand linear korreliert.
 Ein linearer Fit der Form
 \begin{equation}
     t = a \cdot ch + b
     \label{eqn:fit_kanal}
 \end{equation}
-wird durchgeführt, wobei $ch$ die Kanäle ("`channel"') im Bereich $[0, 511]$ und $t$ die Impulsdauer beschreibt.
+wird durchgeführt, wobei $ch$ die Kanäle ("`channel"') im Bereich $[0, 511]$ und $t$ den Impulsabstand beschreibt.
 Die Ausgleichsgerade mit den Parametern
 \begin{align*}
     a_\text{Kalibration} = \qty{0.0440(00001)}{\second}, \qquad b_\text{Kalibration} = \qty{0.3125(00079)}{\second}
@@ -122,7 +122,7 @@ und die Messwerte sind \autoref{fig:kalibration} abgebildet.
 \begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{content/plots/calibration.pdf}
-    \caption{Die ermittelten Kanäle des Vielkanalanalysators in Abhängigkeit der eingestellten Impulsdauer.
+    \caption{Die ermittelten Kanäle des Vielkanalanalysators in Abhängigkeit des eingestellten Impulsabstands.
     Ein linearer Fit verdeutlicht die lineare Korrelation zwischen den Variablen.
     }
     \label{fig:kalibration}
@@ -148,7 +148,7 @@ Die Ereignisrate beträgt im Durchschnitt etwa $n = \qty{28.5}{\frac{1}{\second}
 Die Wahrscheinlichkeit, dass während der Suchzeit $T_\text{S}$ ein weiteres Myon in den Detektor trifft folgt einer Poisson-Verteilung.  
 Der Untergrund wird mittels \autoref{eqn:poisson_untergrund} auf
 \begin{equation}
-    N_\text{Untergrund} = \qty{1283(1)}{}
+    N_\text{Untergrund} = \qty{1283}{}
     \label{eqn:untergrund}
 \end{equation}
 abgeschätzt.
@@ -163,6 +163,14 @@ Es wird eine Ausgleichsrechnung mit der Funktion
     N(t) = N_0 \cdot e^{- \lambda t} + U_1
 \end{equation}
 durchgeführt.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{content/plots/lifetime.pdf}
+    \caption{Die Anzahl detektierter Ereignisse $N$ die ein Start- und Stoppsignal ausgelöst haben in Abhängigkeit der gemessenen Zerfallszeit $t$.
+    Die exponentielle Ausgleichskurve führt direkt zur Lebensdauer der kosmischen Myonen.
+    }
+    \label{fig:lebensdauer1}
+\end{figure}
 Dabei werden die Kanäle im Bereich $[4, 218]$ beachtet.
 Die ersten 4 Kanäle weisen eine sehr geringe Ereignisrate auf, obwohl im Anfangsbereich hohe Ereignisraten erwartet werden.
 Setzt man den Kanal $218$ in \autoref{eqn:fit_kanal} ein, so erhält man eine Zerfallszeit von $\sim \qty{10}{\micro\second}$.
@@ -176,46 +184,33 @@ Dabei ergibt sich für die Lebensdauer $\tau = 1/\lambda$ und für den Untergrun
     U_1 &= \qty{1.05(41)}{} \,.
 \end{align}
 Die Messwerte und exponentielle Ausgleichskurve sind in \autoref{fig:lebensdauer1} dargestellt.
-\begin{figure}
-    \centering
-    \includegraphics[width=0.9\textwidth]{content/plots/lifetime.pdf}
-    \caption{Die Anzahl detektierter Ereignisse $N$ die ein Start- und Stoppsignal ausgelöst haben in Abhängigkeit der gemessenen Zerfallszeit $t$.
-    Die exponentielle Ausgleichskurve führt direkt zur Lebensdauer der kosmischen Myonen.
-    }
-    \label{fig:lebensdauer1}
-\end{figure}
+\\
 \\
 Zuletzt wird der in \autoref{sec:untergrund} statistisch abgeschätzte Untergrund zur Bestimmung der Lebensdauer der kosmischen Myonen verwendet.
 In der exponentiellen Ausgleichsfunktion
 \begin{equation}
-    N(t) = N_0 \cdot e^{- \lambda t}
+    N(t) = N_0 \cdot e^{- \lambda t} + U_2
     \label{eqn:exp2}
 \end{equation}
-wird nicht weiter eine konstante Verschiebung der Zählraten durch den Untergrund berücksichtigt.
+wird der Untergrund nicht weiter als Fit-Parameter behandelt.
+$U_2$ ist hier der statistisch ermittelte Untergrund.
 Es wird angenommen, dass sich der Untergrund (\autoref{eqn:untergrund}) gleichmäßig auf alle Kanäle verteilt.
 Dabei werden weiter die Kanäle $[4,218]$ betrachtet.
 Der Untergrund pro Kanal ergibt sich dann zu
 \begin{equation}
-    U_2 = \qty{5.97(1)}{}
+    U_2 = \qty{5.97}{} \, .
 \end{equation}
-und wird von den gemessenen Ereignissen abgezogen.
-Dabei kommt es bei Kanälen mit bereits wenigen Ereignissen (ab $\sim \qty{7}{\micro\second}$) zu negativen Zählraten.
-Die Zählraten folgen einer Exponentialfunktion, die mathematisch keine negativen Werte annehmen darf.
-Um physikalisch sinnvolle Ergebnisse zu erhalten, werden bei der Ausgleichsrechnung Zerfallszeiten bis $\qty{6.96}{\micro\second}$ berücksichtigt.
-\\
 Aus einer Ausgleichsrechnung mit \autoref{eqn:exp2} folgt
 \begin{equation}
-    \tau_2 = \qty{1.93(4)}{\micro\second}
+    \tau_2 = \qty{1.69(4)}{\micro\second}
 \end{equation}
 für die Lebensdauer der Myonen unter Beachtung des statistich abgeschätzten Untergrunds.
-Die korrigierten Ereigniszahlen $N$ für die Zerfallszeiten der Kanäle $[4,218]$, sowie die Ausgleichskurve sind in \autoref{fig:lebensdauer2} dargestellt.
-Die für die Ausgleichsrechnung verwendeten Messwerte sind in gelb markiert.
+Die Anzahl Ereignisse $N$ für die Zerfallszeiten der Kanäle $[4,218]$, sowie die Ausgleichskurve sind in \autoref{fig:lebensdauer2} dargestellt.
 \begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{content/plots/lifetime2.pdf}
     \caption{Die Anzahl detektierter Ereignisse $N$ die ein Start- und Stoppsignal ausgelöst haben in Abhängigkeit der gemessenen Zerfallszeit $t$.
-    Die in gelb markierten Messwerte werden für die Ausgleichsrechnung verwendet.
-    Die exponentielle Ausgleichskurve führt direkt zur Lebensdauer der kosmischen Myonen.
+    Die exponentielle Ausgleichskurve berücksichtigt den statistisch ermittelten Untergrund als Konstante.
     }
     \label{fig:lebensdauer2}
 \end{figure}
