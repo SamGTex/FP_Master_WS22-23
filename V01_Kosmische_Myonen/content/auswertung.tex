@@ -43,39 +43,42 @@ Eine Verzögerung auf der linken bzw. rechten Leitung entspricht einer negativen
     \centering
     \includegraphics[width=0.9\textwidth]{content/plots/verzoegerungszeit.pdf}
     \caption{Die gemessene Ereignisrate $N$ in Abhängigkeit der Verzögerungszeit $\Delta t$.
-    Die Messwerte werden in 3 Bereiche unterteilt, wobei die ersten und letzten Messwerte nicht berücksichtigt werden.
-    Der Anstieg und Abfall wird näherungsweise jeweils durch einen linearen Fit dargestellt.
-    Das Mittel über die zum Plateau zugehörigen Messwerte definiert die Plateau-Höhe.}
+    Die Messwerte werden in zwei Bereiche unterteilt, wobei die ersten und letzten Messwerte nicht berücksichtigt werden.
+    Der Anstieg und Abfall wird näherungsweise jeweils durch einen linearen Fit dargestellt.}
     \label{fig:verzoegerung}
 \end{figure}
 \\
-Die Messwerte werden in einen Anstiegs-, Abstiegs- und Plateau-Bereich unterteilt.
+Die Messwerte werden in einen Anstiegs- und Abstiegsbereich unterteilt.
+Wird das Signal eines Photomultipliers zu stark verzögert, löst die Koinzidenz kein Signal aus.
+Im mittleren Bereich wäre ein Plateau zu erwarten, dieses wird in diesen Daten nicht beobachtet.
+\\
 Statt die Gesamtanzahl gemessener Impulse in einem bestimmten Zeitraum wird die Impulsrate pro Sekunde betrachtet.
-Im Mittel ergibt sich eine Plateau-Höhe von
-\begin{equation}
-    N_\text{Plateau} = \qty{24.53(103)}{\frac{1}{\second}} \,.
-\end{equation}
-Für den Anstiegs- und Abstiegsbereich wird ein linearer Fit der Form
+Anstiegs- und Abstiegsbereich folgen einem linearen Verlauf und daher wird ein linearer Fit der Form
 \begin{equation*}
     N = a \cdot t + b
 \end{equation*}
 mithilfe der Methode der kleinsten Quadrate (\textit{scipy.optimize.curve\_fit}\cite{scipy}) durchgeführt.
 Aus der Ausgleichsrechnung folgen die Parameter
 \begin{align*}
-    a_\text{Anstieg} &= \qty{1.57(14)e9}{\frac{1}{\second^2}},\qquad b_\text{Anstieg} = \qty{23.31(159)}{\frac{1}{\second}}, \\
-    a_\text{Abfall} &= \qty{-170(25)e9}{\frac{1}{\second^2}},\qquad b_\text{Abfall} = \qty{39.25(480)}{\frac{1}{\second}} \,.
+    a_\text{Anstieg} &= \qty{1.37(6)e9}{\frac{1}{\second^2}},\qquad b_\text{Anstieg} = \qty{21.08(61)}{\frac{1}{\second}}, \\
+    a_\text{Abfall} &= \qty{-1.80(20)e9}{\frac{1}{\second^2}},\qquad b_\text{Abfall} = \qty{41.27(383)}{\frac{1}{\second}} \,.
 \end{align*}
-Aus den Schnittpunkten der Ausgleichsgeraden mit der halben Plateau-Höhe
+Das Maximum ergibt sich als Schnittpunkt der Geraden und kann auf 
+\begin{equation}
+    N_\text{Max} = \qty{29.81(72)}{\frac{1}{\second}}
+\end{equation}
+bestimmt werden.
+Aus den Schnittpunkten der Ausgleichsgeraden mit der halben maximalen Höhe $N_\text{Max}$
 \begin{align*}
-    t_\text{Anstieg} &= \qty{-7.03(124)}{\nano\second} \\
-    t_\text{Abfall} &= \qty{15.84(363)}{\nano\second}
+    t_\text{Anstieg} &= \qty{-4.49(40)}{\nano\second} \\
+    t_\text{Abfall} &= \qty{14.62(267)}{\nano\second}
 \end{align*}
 kann die Halbwertsbreite als Differenz der Schnittpunkte zu
 \begin{equation}
-    \Delta t = t_\text{Abfall} - t_\text{Anstieg} = \qty{22.87(386)}{\nano\second}
+    \Delta t = t_\text{Abfall} - t_\text{Anstieg} = \qty{19.11(270)}{\nano\second}
 \end{equation}
 bestimmt werden.
-Die Messwerte, Plateau-Höhe und Ausgleichsgeraden sind in \autoref{fig:verzoegerung} dargestellt.
+Die Messwerte und Ausgleichsgeraden sind in \autoref{fig:verzoegerung} dargestellt.
 Um im Folgenden eine möglichst hohe Impulsrate zu messen, wird die Verzögerungszeit auf $\Delta t = \qty{8}{\nano\second}$ eingestellt.%???
 \FloatBarrier
 
@@ -172,7 +175,8 @@ durchgeführt.
     \label{fig:lebensdauer1}
 \end{figure}
 Dabei werden die Kanäle im Bereich $[4, 218]$ beachtet.
-Die ersten 4 Kanäle weisen eine sehr geringe Ereignisrate auf, obwohl im Anfangsbereich hohe Ereignisraten erwartet werden.
+Die ersten vier Kanäle weisen eine sehr geringe Ereignisrate auf, obwohl im Anfangsbereich hohe Ereignisraten erwartet werden.
+Ein möglicher Grund ist, dass der Vielkanalanalysator oder der TAC zu kurze Zerfallszeiten nicht erfassen kann.
 Setzt man den Kanal $218$ in \autoref{eqn:fit_kanal} ein, so erhält man eine Zerfallszeit von $\sim \qty{10}{\micro\second}$.
 Dies entspricht der Suchzeit $T_S$.
 Alle weiteren Kanäle weisen daher sehr geringe bis keine Ereignisse auf und dürfen nicht in der Ausgleichsrechnung berücksichtigt werden.
